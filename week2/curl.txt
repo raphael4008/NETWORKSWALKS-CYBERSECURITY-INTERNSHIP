@@ -1,0 +1,37 @@
+❯ nslookup networkwalks.com
+Server:         1.1.1.1
+Address:        1.1.1.1#53
+
+Non-authoritative answer:
+Name:   networkwalks.com
+Address: 192.232.216.135
+
+❯ curl -I https://networkwalks.com
+HTTP/2 200 
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"), private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://networkwalks.com/wp-json/>; rel="https://api.w.org/", <https://networkwalks.com/wp-json/wp/v2/pages/53>; rel="alternate"; title="JSON"; type="application/json", <https://networkwalks.com/>; rel=shortlink
+set-cookie: __wpdm_client=0a1220e8a45aef4f8d9b5b7cb77211a7; path=/; domain=networkwalks.com; secure; HttpOnly
+referrer-policy: no-referrer-when-downgrade
+x-endurance-cache-level: 0
+x-nginx-cache: WordPress
+content-type: text/html; charset=UTF-8
+date: Tue, 10 Nov 2026 08:51:51 GMT
+server: Apache
+
+
+~/Documents/Networkwalks/week2 main* ❯                                                                                         11:51:52 AM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

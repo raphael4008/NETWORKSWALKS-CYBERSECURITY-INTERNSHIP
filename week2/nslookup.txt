@@ -1,0 +1,40 @@
+❯ nslookup networkwalks.com
+Server:         1.1.1.1
+Address:        1.1.1.1#53
+
+Non-authoritative answer:
+Name:   networkwalks.com
+Address: 192.232.216.135
+
+
+~/Documents/Networkwalks/week2 main* ❯                                                                                         11:49:24 AM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+❯ nslookup networkwalks.com
+Server:         1.1.1.1
+Address:        1.1.1.1#53
+
+Non-authoritative answer:
+Name:   networkwalks.com
+Address: 192.232.216.135
+
+❯ curl -I https://networkwalks.com
+HTTP/2 200 
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"), private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://networkwalks.com/wp-json/>; rel="https://api.w.org/", <https://networkwalks.com/wp-json/wp/v2/pages/53>; rel="alternate"; title="JSON"; type="application/json", <https://networkwalks.com/>; rel=shortlink
+set-cookie: __wpdm_client=0a1220e8a45aef4f8d9b5b7cb77211a7; path=/; domain=networkwalks.com; secure; HttpOnly
+referrer-policy: no-referrer-when-downgrade
+x-endurance-cache-level: 0
+x-nginx-cache: WordPress
+content-type: text/html; charset=UTF-8
+date: Tue, 10 Nov 2026 08:51:51 GMT
+server: Apache
+
+❯ $ wafw00f networkwalks.com
+zsh: command not found: $
+❯ wafw00f networkwalks.com
+
+                ______
+               /      \
+              (  W00f! )
+               \  ____/
+               ,,    __            404 Hack Not Found
+           |`-.__   / /                      __     __
+           /"  _/  /_/                       \ \   / /
+          *===*    /                          \ \_/ /  405 Not Allowed
+         /     )__//                           \   /
+    /|  /     /---`                        403 Forbidden
+    \\/`   \ |                                 / _ \
+    `\    /_\\_              502 Bad Gateway  / / \ \  500 Internal Error
+      `_____``-`                             /_/   \_\\
+
+                        ~ WAFW00F : v2.4.2 ~
+        The Web Application Firewall Fingerprinting Toolkit
+    
+[*] Checking https://networkwalks.com
+[+] The site https://networkwalks.com is behind ModSecurity (SpiderLabs) WAF.
+[~] Number of requests: 2
+
+~/Documents/Networkwalks/week2 main* 7s ❯                                                                                      11:53:32 AM
