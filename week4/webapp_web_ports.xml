@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.991 scan initiated Mon Nov 23 12:44:29 2026 as: /usr/lib/nmap/nmap -&#45;privileged -vv -n -sV -sC -Pn -p 80,443,8000,8008,8080,8081,8443,8888,9090 -oA webapp_web_ports 192.188.201.16 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -vv -n -sV -sC -Pn -p 80,443,8000,8008,8080,8081,8443,8888,9090 -oA webapp_web_ports 192.188.201.16" start="1795427069" startstr="Mon Nov 23 12:44:29 2026" version="7.991" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="9" services="80,443,8000,8008,8080-8081,8443,8888,9090"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1795427069"/>
+<taskend task="NSE" time="1795427069"/>
+<taskbegin task="NSE" time="1795427069"/>
+<taskend task="NSE" time="1795427069"/>
+<taskbegin task="NSE" time="1795427069"/>
+<taskend task="NSE" time="1795427069"/>
+<taskbegin task="SYN Stealth Scan" time="1795427069"/>
+<taskend task="SYN Stealth Scan" time="1795427072" extrainfo="9 total ports"/>
+<taskbegin task="Service scan" time="1795427072"/>
+<taskbegin task="NSE" time="1795427072"/>
+<taskend task="NSE" time="1795427077"/>
+<taskbegin task="NSE" time="1795427077"/>
+<taskend task="NSE" time="1795427077"/>
+<taskbegin task="NSE" time="1795427077"/>
+<taskend task="NSE" time="1795427077"/>
+<host starttime="1795427069" endtime="1795427077"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.188.201.16" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8000"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="http-alt" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8008"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8080"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="http-proxy" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8081"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="blackice-icecap" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8443"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="https-alt" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8888"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="sun-answerbook" method="table" conf="3"/></port>
+<port protocol="tcp" portid="9090"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="zeus-admin" method="table" conf="3"/></port>
+</ports>
+</host>
+<taskbegin task="NSE" time="1795427077"/>
+<taskend task="NSE" time="1795427077"/>
+<taskbegin task="NSE" time="1795427077"/>
+<taskend task="NSE" time="1795427077"/>
+<taskbegin task="NSE" time="1795427077"/>
+<taskend task="NSE" time="1795427077"/>
+<runstats><finished time="1795427077" timestr="Mon Nov 23 12:44:37 2026" summary="Nmap done at Mon Nov 23 12:44:37 2026; 1 IP address (1 host up) scanned in 8.79 seconds" elapsed="8.79" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

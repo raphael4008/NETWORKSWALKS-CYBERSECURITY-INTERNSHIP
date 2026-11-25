@@ -1,0 +1,11 @@
+# Nmap 7.991 scan initiated Mon Nov 23 12:29:59 2026 as: /usr/lib/nmap/nmap --privileged -vv -n -sV -sC -Pn -p- -oA webapp_full_scan 192.188.201.16
+Nmap scan report for 192.188.201.16
+Host is up, received user-set (0.026s latency).
+Scanned at 2026-11-23 12:30:00 EAT for 822s
+Not shown: 65534 filtered tcp ports (no-response)
+PORT   STATE SERVICE REASON         VERSION
+53/tcp open  domain  syn-ack ttl 63 Mikrotik dnsd
+
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Nov 23 12:43:42 2026 -- 1 IP address (1 host up) scanned in 823.09 seconds

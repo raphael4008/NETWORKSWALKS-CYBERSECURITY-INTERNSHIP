@@ -1,0 +1,1018 @@
+[*] Searching ShodanInternetDB. 
+[*] Searching Robtex. 
+[*] Searching Subdomaincenter. 
+[*] Searching Thc. 
+No response from ThreatCrowd API for: medirozahospital.com
+[*] Searching Threatcrowd. 
+
+ An error occurred while processing a "work item": TypeError: string indices must be integers, not 'str'
+
+[*] Searching Subdomainfinderc99. 
+[*] Windvane API key not found. Using limited unauthenticated access.
+[*] API unavailable, using fallback subdomain pattern search...
+[*] Found 3 subdomains using DNS fallback
+[*] Searching Windvane. 
+[*] Searching Commoncrawl. 
+[*] Searching Yahoo. 
+[*] Searching Waybackarchive. 
+
+[*] No LinkedIn users found.
+
+
+
+[*] LinkedIn Links found: 0
+---------------------
+
+[*] IPs found: 3
+-------------------
+199.188.201.16
+
+[*] No emails found.
+
+[*] No people found.
+
+[*] Hosts found: 4
+---------------------
+ftp.medirozahospital.com
+heartpatient.medirozahospital.com
+heartpatient.medirozahospital.com:199.188.201.16
+mail.medirozahospital.com
+
+[*] Performing SecurityScorecard scan...
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+An exception has occurred in SecurityScorecard scanning: 
+[!] Missing API key for SecurityScorecard. 
+
+[*] Performing BuiltWith scan...
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+
+[!] Missing API key for BuiltWith. 
+❯ whatweb -v -a 3 https://medirozahospital.com
+WhatWeb report for https://medirozahospital.com
+Status    : 403 Forbidden
+Title     : ,403 Forbidden
+IP        : 199.188.201.16
+Country   : UNITED STATES, US
+
+Summary   : HTML5, HTTPServer[LiteSpeed], LiteSpeed, PoweredBy[LiteSpeed], UncommonHeaders[x-turbo-charged-by]
+
+Detected Plugins:
+[ HTML5 ]
+        HTML version 5, detected by the doctype declaration 
+
+
+[ HTTPServer ]
+        HTTP server header string. This plugin also attempts to 
+        identify the operating system from the server header. 
+
+        String       : LiteSpeed (from server string)
+
+[ LiteSpeed ]
+        LiteSpeed web server, which is able to read Apache 
+        configuration directly and used together with web hosting 
+        control panels by replacing Apache 
+
+
+[ PoweredBy ]
+        This plugin identifies instances of 'Powered by x' text and 
+        attempts to extract the value for x. 
+
+        String       : LiteSpeed
+
+[ UncommonHeaders ]
+        Uncommon HTTP server headers. The blacklist includes all 
+        the standard headers and many non standard but common ones. 
+        Interesting but fairly common headers should have their own 
+        plugins, eg. x-powered-by, server and x-aspnet-version. 
+        Info about headers can be found at www.http-stats.com 
+
+        String       : x-turbo-charged-by (from headers)
+
+HTTP Headers:
+        HTTP/1.1 403 Forbidden
+        keep-alive: timeout=5, max=100
+        cache-control: private, no-cache, no-store, must-revalidate, max-age=0
+        pragma: no-cache
+        content-type: text/html
+        content-length: 1242
+        date: Mon, 23 Nov 2026 09:18:54 GMT
+        server: LiteSpeed
+        x-turbo-charged-by: LiteSpeed
+        connection: close
+
+❯ curl -I https://medirozahospital.com
+HTTP/2 200 
+content-type: text/html
+last-modified: Fri, 04 Sep 2026 02:03:12 GMT
+accept-ranges: bytes
+content-length: 5445
+date: Mon, 23 Nov 2026 09:19:45 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+❯ 
+❯ parsed.names:medirozahospital.com
+zsh: command not found: parsed.names:medirozahospital.com
+❯ sudo apt install waybackurls
+[sudo] password for bantu: 
+Error: Unable to locate package waybackurls
+❯ gau medirozahospital.com
+fatal: pathspec 'medirozahospital.com' did not match any files
+❯ nmap -vv -n -sV -sC -Pn -p- -oA 192.188.201.16
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-23 12:28 +0300
+NSE: Loaded 158 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:28
+Completed NSE at 12:28, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:28
+Completed NSE at 12:28, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:28
+Completed NSE at 12:28, 0.00s elapsed
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:28
+Completed NSE at 12:28, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:28
+Completed NSE at 12:28, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:28
+Completed NSE at 12:28, 0.00s elapsed
+Read data files from: /usr/share/nmap
+WARNING: No targets were specified, so 0 hosts scanned.
+Nmap done: 0 IP addresses (0 hosts up) scanned in 0.48 seconds
+           Raw packets sent: 0 (0B) | Rcvd: 0 (0B)
+❯ nmap -vv -n -sV -sC -Pn -p- -oA webapp_full_scan 192.188.201.16
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-23 12:29 +0300
+NSE: Loaded 158 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:30
+Completed NSE at 12:30, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:30
+Completed NSE at 12:30, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:30
+Completed NSE at 12:30, 0.00s elapsed
+Initiating SYN Stealth Scan at 12:30
+Scanning 192.188.201.16 [65535 ports]
+Discovered open port 53/tcp on 192.188.201.16
+SYN Stealth Scan Timing: About 6.29% done; ETC: 12:38 (0:07:42 remaining)
+SYN Stealth Scan Timing: About 17.56% done; ETC: 12:36 (0:05:56 remaining)
+SYN Stealth Scan Timing: About 21.07% done; ETC: 12:38 (0:06:31 remaining)
+SYN Stealth Scan Timing: About 21.85% done; ETC: 12:40 (0:08:15 remaining)
+SYN Stealth Scan Timing: About 23.18% done; ETC: 12:42 (0:09:50 remaining)
+SYN Stealth Scan Timing: About 28.00% done; ETC: 12:41 (0:08:20 remaining)
+SYN Stealth Scan Timing: About 30.13% done; ETC: 12:42 (0:09:01 remaining)
+SYN Stealth Scan Timing: About 34.72% done; ETC: 12:41 (0:07:34 remaining)
+SYN Stealth Scan Timing: About 42.24% done; ETC: 12:39 (0:05:02 remaining)
+SYN Stealth Scan Timing: About 44.02% done; ETC: 12:41 (0:05:40 remaining)
+SYN Stealth Scan Timing: About 45.01% done; ETC: 12:42 (0:06:45 remaining)
+SYN Stealth Scan Timing: About 46.35% done; ETC: 12:43 (0:07:28 remaining)
+SYN Stealth Scan Timing: About 47.00% done; ETC: 12:45 (0:08:58 remaining)
+SYN Stealth Scan Timing: About 47.41% done; ETC: 12:48 (0:10:59 remaining)
+SYN Stealth Scan Timing: About 48.80% done; ETC: 12:47 (0:09:43 remaining)
+SYN Stealth Scan Timing: About 49.15% done; ETC: 12:50 (0:11:58 remaining)
+SYN Stealth Scan Timing: About 50.56% done; ETC: 12:49 (0:09:55 remaining)
+SYN Stealth Scan Timing: About 52.53% done; ETC: 12:48 (0:08:55 remaining)
+SYN Stealth Scan Timing: About 54.45% done; ETC: 12:48 (0:07:41 remaining)
+SYN Stealth Scan Timing: About 55.14% done; ETC: 12:49 (0:08:45 remaining)
+SYN Stealth Scan Timing: About 57.25% done; ETC: 12:48 (0:06:26 remaining)
+SYN Stealth Scan Timing: About 61.07% done; ETC: 12:46 (0:04:19 remaining)
+SYN Stealth Scan Timing: About 65.07% done; ETC: 12:46 (0:03:09 remaining)
+Completed SYN Stealth Scan at 12:43, 808.12s elapsed (65535 total ports)
+Initiating Service scan at 12:43
+Scanning 1 service on 192.188.201.16
+Completed Service scan at 12:43, 6.05s elapsed (1 service on 1 host)
+NSE: Script scanning 192.188.201.16.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:43
+Completed NSE at 12:43, 8.29s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:43
+Completed NSE at 12:43, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:43
+Completed NSE at 12:43, 0.00s elapsed
+Nmap scan report for 192.188.201.16
+Host is up, received user-set (0.026s latency).
+Scanned at 2026-11-23 12:30:00 EAT for 822s
+Not shown: 65534 filtered tcp ports (no-response)
+PORT   STATE SERVICE REASON         VERSION
+53/tcp open  domain  syn-ack ttl 63 Mikrotik dnsd
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:43
+Completed NSE at 12:43, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:43
+Completed NSE at 12:43, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:43
+Completed NSE at 12:43, 0.00s elapsed
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 823.09 seconds
+           Raw packets sent: 131534 (5.787MB) | Rcvd: 516 (22.704KB)
+❯ nmap -vv -n -sV -sC -Pn -p 80,443,8000,8008,8080,8081,8443,8888,9090 -oA webapp_web_ports 192.188.201.16
+
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-23 12:44 +0300
+NSE: Loaded 158 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+Initiating SYN Stealth Scan at 12:44
+Scanning 192.188.201.16 [9 ports]
+Completed SYN Stealth Scan at 12:44, 3.03s elapsed (9 total ports)
+Initiating Service scan at 12:44
+NSE: Script scanning 192.188.201.16.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 5.01s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+Nmap scan report for 192.188.201.16
+Host is up, received user-set.
+Scanned at 2026-11-23 12:44:29 EAT for 8s
+
+PORT     STATE    SERVICE         REASON      VERSION
+80/tcp   filtered http            no-response
+443/tcp  filtered https           no-response
+8000/tcp filtered http-alt        no-response
+8008/tcp filtered http            no-response
+8080/tcp filtered http-proxy      no-response
+8081/tcp filtered blackice-icecap no-response
+8443/tcp filtered https-alt       no-response
+8888/tcp filtered sun-answerbook  no-response
+9090/tcp filtered zeus-admin      no-response
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 8.79 seconds
+           Raw packets sent: 18 (792B) | Rcvd: 0 (0B)
+❯ openssl s_client -connect medirozahospital.com:443 -showcerts
+Connecting to 199.188.201.16
+CONNECTED(00000003)
+depth=2 C=US, O=SSL Corporation, CN=SSL.com TLS RSA Root CA 2022
+verify return:1
+depth=1 C=US, O=SSL Corporation, CN=SSL.com TLS Issuing RSA CA R1
+verify return:1
+depth=0 CN=medirozahospital.com
+verify return:1
+---
+Certificate chain
+ 0 s:CN=medirozahospital.com
+   i:C=US, O=SSL Corporation, CN=SSL.com TLS Issuing RSA CA R1
+   a:PKEY: RSA, 2048 (bit); sigalg: sha256WithRSAEncryption
+   v:NotBefore: Aug 14 20:59:46 2026 GMT; NotAfter: Feb 28 21:05:45 2027 GMT
+-----BEGIN CERTIFICATE-----
+MIIGiDCCBPCgAwIBAgIQOCVfeIartuSKztg0Umk2ADANBgkqhkiG9w0BAQsFADBP
+MQswCQYDVQQGEwJVUzEYMBYGA1UECgwPU1NMIENvcnBvcmF0aW9uMSYwJAYDVQQD
+DB1TU0wuY29tIFRMUyBJc3N1aW5nIFJTQSBDQSBSMTAeFw0yNjA4MTQyMDU5NDZa
+Fw0yNzAyMjgyMTA1NDVaMB8xHTAbBgNVBAMMFG1lZGlyb3phaG9zcGl0YWwuY29t
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxrgV48QFolKhOH9CY8hS
+bqDRedLKcYOdiaNew7aPgxMy4Hwzhg6anPwL9JOX3o/xk6rimazAyRkzUrzxeFvX
+zcbBVKm4pwy2F3UgpkxwSsyXMsL5H4lXm2tGJu2ARp85Ew/04jkh0RtK7LLKt3m6
+RpsqrXAyqrqgG+6d1rnTJlKXOOJr8xodw8QPhedvvyNzV4nfd6RclbPbgCmGMuIl
+PjJgssM0iyXWznPdOWIGMPF49hDlnG9mGboM2+q5/g+vWYDDPVPneNBE/FRA3suh
+Th485WveQatuPl0bC0lyFEBSsJrX5pASXnUKw9gOmbEW6o06/J1FKiwsBp9R+A9d
+WwIDAQABo4IDDjCCAwowDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBR5upR3oA0Z
+3TTmOaT8TKXSWm31jDBqBggrBgEFBQcBAQReMFwwOAYIKwYBBQUHMAKGLGh0dHA6
+Ly9jZXJ0LnNzbC5jb20vU1NMLmNvbS1UTFMtSS1SU0EtUjEuY2VyMCAGCCsGAQUF
+BzABhhRodHRwOi8vb2NzcHMuc3NsLmNvbTA5BgNVHREEMjAwghRtZWRpcm96YWhv
+c3BpdGFsLmNvbYIYd3d3Lm1lZGlyb3phaG9zcGl0YWwuY29tMCMGA1UdIAQcMBow
+CAYGZ4EMAQIBMA4GDCsGAQQBgqkwAQMBATAdBgNVHSUEFjAUBggrBgEFBQcDAgYI
+KwYBBQUHAwEwPQYDVR0fBDYwNDAyoDCgLoYsaHR0cDovL2NybHMuc3NsLmNvbS9T
+U0wuY29tLVRMUy1JLVJTQS1SMS5jcmwwHQYDVR0OBBYEFA+iNAG7lvQhbLRyxgwy
+POlYofQvMA4GA1UdDwEB/wQEAwIFoDCCAX4GCisGAQQB1nkCBAIEggFuBIIBagFo
+AHcATGPcmOWcHauI9h6KPd6uj6tEozd7X5uUw/uhnPzBviYAAAGgAhwNpgAABAMA
+SDBGAiEA9qrp6jOzYEGdvjwZI9nrthgmKpWuirp0KRb8TFhMptECIQDkBCJmZVA4
+6eEhCLwk+N/xekdSnBhoX/5HPEXZTeoY5AB1AETCvQzpFA5kpclKAZMKWqG7NZcO
+AO4RFoloKhxE17VmAAABoAIcDaQAAAQDAEYwRAIgRLqavGZVgWbqQrnvIXaYSDhN
+UXOoO6Mjh6Jt7aC3y/ICIEtkY8vesZsYbP1xvBoo0pZWudUvuvF1LX/CJ9leRuLh
+AHYAHJ9oLOn68EVpUPgbloqH3dsyENhM5siy44JSSsTPWZ8AAAGgAhwNmgAABAMA
+RzBFAiEAxpYasaQeX8eNuJeqCEw3d6QOXNBTVK9GbId+aiFXsYECIF6qa5cHW9BS
+1Y2FqQL4RA+AeMmOwQjHdae4/GAkMGuPMA0GCSqGSIb3DQEBCwUAA4IBgQCat9e4
+nuzmmXB216c1FvYj4pZ4HvwU0EME04Ogt+x5qYd1wz5jjR3QPDfYLXLtJrRgiybH
+KqTP9lzFMns5vJGanUYXPL41/cVg7QQ8ZieYa5tRlP+Ak8geWbl/V7drpHh5OBDa
+TbNtGWRpb5C0XBWWrT82s3rl2koGn4FDYJnxo6Vn6mqjiZSUXXvfdi+qWPSIyl6f
+OoTG2F26PiFaCxKAqIGYgYbWzq1bSJNmdiSV7ZxuOT+S8JPPDDSzILYrJm+R27zD
+LUTbYt69zlnoNT5onXEmDab4tLfxv/wWsYfhmBKp7MXgB9Uy53LI3FIuc+KgybOP
+jjo29xqOvEgiC0c9pRpnjcRsSS2o0pOIXDB4StaLMtpdMjynS/kpdx/R9zPeK/1X
+zKmJJPLMOmT00iw7i4e/S0QtnNReL+NG4lVjK1+7cMEm2RCrhCkmdXdRGMQNfxpM
+VXqJEOyIMzz7qtx6ytuxNCyHBTCW2nwqxPyZItTetyOZBwWrQeemLnmEVhY=
+-----END CERTIFICATE-----
+ 1 s:C=US, O=SSL Corporation, CN=SSL.com TLS Issuing RSA CA R1
+   i:C=US, O=SSL Corporation, CN=SSL.com TLS RSA Root CA 2022
+   a:PKEY: RSA, 3072 (bit); sigalg: sha256WithRSAEncryption
+   v:NotBefore: Oct 21 17:02:03 2022 GMT; NotAfter: Oct 18 17:02:02 2032 GMT
+-----BEGIN CERTIFICATE-----
+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
+iTZinEPk
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=CN=medirozahospital.com
+issuer=C=US, O=SSL Corporation, CN=SSL.com TLS Issuing RSA CA R1
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: rsa_pss_rsae_sha256
+Peer Temp Key: X25519, 253 bits
+---
+SSL handshake has read 3783 bytes and written 1767 bytes
+Verification: OK
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Protocol: TLSv1.3
+Server public key is 2048 bit
+This TLS version forbids renegotiation.
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 0 (ok)
+---
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: D4F1FAD935594C713BA748426AD330C7FED0BB34CF994EC1A9614C54EFCD1C4B
+    Session-ID-ctx: 
+    Resumption PSK: CC684AC5E4F8CA5221D5EF45E867298654D816E0B0D52F746026A01251B2E235486D5C9E4135CA1ABD53FE8CB7191AF2
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - 50 0f 02 dd 56 08 86 6e-ae ca 68 60 96 15 d1 3f   P...V..n..h`...?
+    0010 - 7f 34 f1 bc 69 0b 29 09-07 ea 3c 72 ae e3 a0 0b   .4..i.)...<r....
+
+    Start Time: 1795427196
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: CAB66EE41B51DE0E48914C04EC6F404C0CF3EA16DF61CEA69CB199ED5710E48A
+    Session-ID-ctx: 
+    Resumption PSK: 635C9ABF1F3CDDEDEC46AC2882096EE4D6BBE46EBACB73E2BCF5327B8A94751536CE9CF0254AB5E842DB4CBBAB88F3C4
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - de 48 88 9f d7 02 09 18-f8 2c 19 11 05 9b ff 16   .H.......,......
+    0010 - d6 e4 ce 00 a1 4d 11 17-c1 aa 5d ed 74 f2 d7 84   .....M....].t...
+
+    Start Time: 1795427196
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+HTTP/1.1 408 Request Time-out
+Content-length: 110
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/html
+
+<html><body><h1>408 Request Time-out</h1>
+Your browser didn't send a complete request in time.
+</body></html>
+closed
+❯ sslscan medirozahospital.com
+
+Version: 2.1.5
+OpenSSL 3.6.5 29 Sep 2026
+
+Connected to 199.188.201.16
+
+Testing SSL server medirozahospital.com on port 443 using SNI name medirozahospital.com
+
+  SSL/TLS Protocols:
+SSLv2     disabled
+SSLv3     disabled
+TLSv1.0   disabled
+TLSv1.1   disabled
+TLSv1.2   enabled
+TLSv1.3   enabled
+
+  TLS Fallback SCSV:
+Server supports TLS Fallback SCSV
+
+  TLS renegotiation:
+Session renegotiation not supported
+
+  TLS Compression:
+Compression disabled
+
+  Heartbleed:
+TLSv1.3 not vulnerable to heartbleed
+TLSv1.2 not vulnerable to heartbleed
+
+  Supported Server Cipher(s):
+Preferred TLSv1.3  256 bits  TLS_AES_256_GCM_SHA384        Curve 25519 DHE 253
+Accepted  TLSv1.3  256 bits  TLS_CHACHA20_POLY1305_SHA256  Curve 25519 DHE 253
+Accepted  TLSv1.3  128 bits  TLS_AES_128_GCM_SHA256        Curve 25519 DHE 253
+Preferred TLSv1.2  256 bits  ECDHE-RSA-CHACHA20-POLY1305   Curve 25519 DHE 253
+Accepted  TLSv1.2  128 bits  ECDHE-RSA-AES128-GCM-SHA256   Curve 25519 DHE 253
+Accepted  TLSv1.2  256 bits  ECDHE-RSA-AES256-GCM-SHA384   Curve 25519 DHE 253
+Accepted  TLSv1.2  128 bits  DHE-RSA-AES128-GCM-SHA256     DHE 2048 bits
+Accepted  TLSv1.2  256 bits  DHE-RSA-AES256-GCM-SHA384     DHE 2048 bits
+Accepted  TLSv1.2  128 bits  ECDHE-RSA-AES128-SHA256       Curve 25519 DHE 253
+Accepted  TLSv1.2  256 bits  ECDHE-RSA-AES256-SHA384       Curve 25519 DHE 253
+Accepted  TLSv1.2  128 bits  ECDHE-RSA-AES128-SHA          Curve 25519 DHE 253
+Accepted  TLSv1.2  256 bits  ECDHE-RSA-AES256-SHA          Curve 25519 DHE 253
+Accepted  TLSv1.2  128 bits  DHE-RSA-AES128-SHA256         DHE 2048 bits
+Accepted  TLSv1.2  128 bits  DHE-RSA-AES128-SHA            DHE 2048 bits
+Accepted  TLSv1.2  256 bits  DHE-RSA-AES256-SHA256         DHE 2048 bits
+Accepted  TLSv1.2  256 bits  DHE-RSA-AES256-SHA            DHE 2048 bits
+
+  Server Key Exchange Group(s):
+TLSv1.3  128 bits  secp256r1 (NIST P-256)
+TLSv1.3  192 bits  secp384r1 (NIST P-384)
+TLSv1.3  260 bits  secp521r1 (NIST P-521)
+TLSv1.3  128 bits  x25519
+TLSv1.3  224 bits  x448
+TLSv1.2  128 bits  secp256r1 (NIST P-256)
+TLSv1.2  192 bits  secp384r1 (NIST P-384)
+TLSv1.2  260 bits  secp521r1 (NIST P-521)
+TLSv1.2  128 bits  x25519
+TLSv1.2  224 bits  x448
+
+  SSL Certificate:
+Signature Algorithm: sha256WithRSAEncryption
+RSA Key Strength:    2048
+
+Subject:  medirozahospital.com
+Altnames: DNS:medirozahospital.com, DNS:www.medirozahospital.com
+Issuer:   SSL.com TLS Issuing RSA CA R1
+
+Not valid before: Aug 14 20:59:46 2026 GMT
+Not valid after:  Feb 28 21:05:45 2027 GMT
+❯ testssl.sh medirozahospital.com
+
+zsh: command not found: testssl.sh
+❯ nikto -h https://medirozahospital.com
+
+- Nikto v2.6.1
+---------------------------------------------------------------------------
++ Target IP:          199.188.201.16
++ Target Hostname:    medirozahospital.com
++ Target Port:        443
+---------------------------------------------------------------------------
++ SSL Info:           Subject:  /CN=medirozahospital.com
+                      CN:       medirozahospital.com
+                      SAN:      medirozahospital.com, www.medirozahospital.com
+                      Ciphers:  TLS_AES_256_GCM_SHA384
+                      Issuer:   /C=US/O=SSL Corporation/CN=SSL.com TLS Issuing RSA CA R1
++ Platform:           Unknown
++ Start Time:         2026-11-23 12:50:42 (GMT3)
+---------------------------------------------------------------------------
++ Server: LiteSpeed
++ [999100] /: Uncommon header(s) 'x-turbo-charged-by' found, with contents: LiteSpeed.
++ [750500] /old/: Directory indexing found. See: CWE-548
++ [999997] /robots.txt: Entry '/old/' is returned a non-forbidden or redirect HTTP code (200). See: https://portswigger.net/kb/issues/00600600_robots-txt-file
++ [750500] /patient/: Directory indexing found. See: CWE-548
++ [999997] /robots.txt: Entry '/patient/' is returned a non-forbidden or redirect HTTP code (200). See: https://portswigger.net/kb/issues/00600600_robots-txt-file
++ [750500] /staff/: Directory indexing found. See: CWE-548
++ [999997] /robots.txt: Entry '/staff/' is returned a non-forbidden or redirect HTTP code (200). See: https://portswigger.net/kb/issues/00600600_robots-txt-file
++ [999996] /robots.txt: contains 3 entries which should be manually viewed. See: https://developer.mozilla.org/en-US/docs/Glossary/Robots.txt
++ No CGI Directories found (use '-C all' to force check all possible dirs). CGI tests skipped.
++ [999990] OPTIONS: Allowed HTTP Methods: OPTIONS, HEAD, GET, POST .
++ [013587] /: Suggested security header missing: referrer-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
++ [013587] /: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy
++ [013587] /: Suggested security header missing: content-security-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
++ [013587] /: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ [013587] /: Suggested security header missing: x-content-type-options. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
++ [000332] /webmail/blank.html: IlohaMail 0.8.10 contains an XSS vulnerability. Previous versions contain other non-descript vulnerabilities.
++ [000360] /securecontrolpanel/: Web Server Control Panel.
++ [000362] /webmail/: Web based mail package installed.
++ [001212] /mailman/listinfo: Mailman was found on the server. See: CWE-552
++ [001218] /sitemap.xml: The sitemap.xml file provides a listing of the site content.
++ [001449] /cpanel/: Web-based control panel. See: https://cpanel.net/
++ [001770] /old/: This might be interesting.
++ [001862] /staff/: This might be interesting.
++ [002634] /webmail/lib/emailreader_execute_on_each_page.inc.php: This might be interesting: has been seen in web logs from an unknown scanner.
+^C%                                                                                                                 ❯ droopescan scan drupal -u https://m^[\[200\~medirozahospital.com
+[200\~medirozahospital.comzsh: command not found: droopescan
+❯ sudo apt install droopscan
+[sudo] password for bantu: 
+Error: Unable to locate package droopscan
+❯ wpscan --url https://medirozahospital.com --enumerate
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+                  WordPress Security Scanner
+                         Version 4.1.0
+                    An Automattic endeavor
+                    https://automattic.com
+_______________________________________________________________
+
+[i] Updating the Database ...
+[i] Update completed.
+
+
+Scan Aborted: The target is responding with a 403, this might be due to a WAF. Please re-try with --random-user-agent
+❯ curl https://medirozahospital.com/robots.txt
+# robots.txt
+User-agent: *
+Disallow: /patient/
+Disallow: /staff/
+Disallow: /old/
+
+Sitemap: https://medirozahospital.com/sitemap.xml
+❯ wpscan --url https://medirozahospital.com --random-user=agent
+
+Scan Aborted: invalid option: --random-user=agent
+Did you mean?  random-user-agent
+❯ wpscan --url https://medirozahospital.com random-user=agent
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+                  WordPress Security Scanner
+                         Version 4.1.0
+                    An Automattic endeavor
+                    https://automattic.com
+_______________________________________________________________
+
+
+Scan Aborted: The target is responding with a 403, this might be due to a WAF. Please re-try with --random-user-agent
+❯ wpscan --url https://medirozahospital.com *
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+                  WordPress Security Scanner
+                         Version 4.1.0
+                    An Automattic endeavor
+                    https://automattic.com
+_______________________________________________________________
+
+
+Scan Aborted: The target is responding with a 403, this might be due to a WAF. Please re-try with --random-user-agent
+❯ curl https://medirozahospital.com/sitemap.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sitemap.xml -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://medirozahospital.com/index.html</loc></url>
+  <url><loc>https://medirozahospital.com/about.html</loc></url>
+  <url><loc>https://medirozahospital.com/doctors.html</loc></url>
+  <url><loc>https://medirozahospital.com/contact.html</loc></url>
+</urlset>
+❯ dirb https://medirozahospital.com/usr/share/wordlists/dirb/common.txt -r
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Mon Nov 23 13:47:47 2026
+URL_BASE: https://medirozahospital.com/usr/share/wordlists/dirb/common.txt/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+OPTION: Not Recursive
+
+-----------------
+
+GENERATED WORDS: 4612                                                          
+
+---- Scanning URL: https://medirozahospital.com/usr/share/wordlists/dirb/common.txt/ ----
++ https://medirozahospital.com/usr/share/wordlists/dirb/common.txt/.svn (CODE:403|SIZE:1242)                       
+                                                                               rticles                             
+(!) FATAL: Too many errors connecting to host
+    (Possible cause: SEND ERROR)
+                                                                               
+-----------------
+END_TIME: Mon Nov 23 14:05:11 2026
+DOWNLOADED: 471 - FOUND: 1
+❯ ffuf -w backup-extenstions.txt -u https://medirozahospital.com/index.FUZZ
+
+Encountered error(s): 1 errors occurred.
+        * stat /home/bantu/Documents/Networkwalks/week4/backup-extenstions.txt: no such file or directory
+
+Fuzz Faster U Fool - v2.3.0
+
+HTTP OPTIONS:
+  -H                  Header "Name: Value", separated by colon. Multiple -H flags are accepted.
+  -X                  HTTP method to use
+  -b                  Cookie data "NAME1=VALUE1; NAME2=VALUE2" for copy as curl functionality.
+  -cc                 Client cert for authentication. Client key needs to be defined as well for this to work
+  -ck                 Client key for authentication. Client certificate needs to be defined as well for this to work
+  -d                  POST data
+  -http2              Use HTTP2 protocol (default: false)
+  -ignore-body        Do not fetch the response content. (default: false)
+  -postflight         Raw HTTP request file to run after each fuzzing request (repeatable, order matters)
+  -postflight-var     Extract a variable from the preceding -postflight response: "NAME:regex" (repeatable)
+  -preflight          Raw HTTP request file to run before each fuzzing request (repeatable, order matters)
+  -preflight-error    Preflight error handling: "abort" or "ignore" (default: abort)
+  -preflight-mode     Preflight execution mode: "per-request" or "per-thread" (default: per-request)
+  -preflight-var      Extract a variable from the preceding -preflight response: "NAME:regex" (repeatable)
+  -r                  Follow redirects (default: false)
+  -raw                Do not encode URI (default: false)
+  -recursion          Scan recursively. Only FUZZ keyword is supported, and URL (-u) has to end in it. (default: false)
+  -recursion-depth    Maximum recursion depth. (default: 0)
+  -recursion-strategy Recursion strategy: "default" for a redirect based, and "greedy" to recurse on all matches (default: default)
+  -replay-proxy       Replay matched requests using this proxy.
+  -sni                Target TLS SNI, does not support FUZZ keyword
+  -timeout            HTTP request timeout in seconds. (default: 10)
+  -u                  Target URL
+  -x                  Proxy URL (SOCKS5 or HTTP). For example: http://127.0.0.1:8080 or socks5://127.0.0.1:8080
+
+GENERAL OPTIONS:
+  -V                  Show version information. (default: false)
+  -ac                 Automatically calibrate filtering options (default: false)
+  -acc                Custom auto-calibration string. Can be used multiple times. Implies -ac
+  -ach                Per host autocalibration (default: false)
+  -ack                Autocalibration keyword (default: FUZZ)
+  -acs                Custom auto-calibration strategies. Can be used multiple times. Implies -ac
+  -c                  Colorize output. (default: false)
+  -config             Load configuration from a file
+  -json               JSON output, printing newline-delimited JSON records (default: false)
+  -maxtime            Maximum running time in seconds for entire process. (default: 0)
+  -maxtime-job        Maximum running time in seconds per job. (default: 0)
+  -noninteractive     Disable the interactive console functionality (default: false)
+  -p                  Seconds of delay between requests, or a range of random delay. For example "0.1" or "0.1-2.0"
+  -rate               Rate of requests per second (default: 0)
+  -s                  Do not print additional information (silent mode) (default: false)
+  -sa                 Stop on all error cases. Implies -sf and -se. (default: false)
+  -scraperfile        Custom scraper file path
+  -scrapers           Active scraper groups (default: all)
+  -se                 Stop on spurious errors (default: false)
+  -search             Search for a FFUFHASH payload from ffuf history
+  -sf                 Stop when > 95% of responses return 403 Forbidden (default: false)
+  -t                  Number of concurrent threads. (default: 40)
+  -v                  Verbose output, printing full URL and redirect location (if any) with the results. (default: false)
+
+MATCHER OPTIONS:
+  -mc                 Match HTTP status codes, or "all" for everything. (default: 200-299,301,302,307,401,403,405,500)
+  -ml                 Match amount of lines in response
+  -mmode              Matcher set operator. Either of: and, or (default: or)
+  -mr                 Match regexp
+  -ms                 Match HTTP response size
+  -mt                 Match how many milliseconds to the first response byte, either greater or less than. EG: >100 or <100
+  -mw                 Match amount of words in response
+
+FILTER OPTIONS:
+  -fc                 Filter HTTP status codes from response. Comma separated list of codes and ranges
+  -fl                 Filter by amount of lines in response. Comma separated list of line counts and ranges
+  -fmode              Filter set operator. Either of: and, or (default: or)
+  -fr                 Filter regexp
+  -fs                 Filter HTTP response size. Comma separated list of sizes and ranges
+  -ft                 Filter by number of milliseconds to the first response byte, either greater or less than. EG: >100 or <100
+  -fw                 Filter by amount of words in response. Comma separated list of word counts and ranges
+
+INPUT OPTIONS:
+  -D                  DirSearch wordlist compatibility mode. Used in conjunction with -e flag. (default: false)
+  -e                  Comma separated list of extensions. Extends FUZZ keyword.
+  -enc                Encoders for keywords, eg. 'FUZZ:urlencode b64encode'
+  -ic                 Ignore wordlist comments (default: false)
+  -input-cmd          Command producing the input. --input-num is required when using this input method. Overrides -w.
+  -input-num          Number of inputs to test. Used in conjunction with --input-cmd. (default: 100)
+  -input-shell        Shell to be used for running command
+  -mode               Multi-wordlist operation mode. Available modes: clusterbomb, pitchfork, sniper (default: clusterbomb)
+  -request            File containing the raw http request
+  -request-proto      Protocol to use along with raw request (default: https)
+  -w                  Wordlist file path and (optional) keyword separated by colon. eg. '/path/to/wordlist:KEYWORD'
+
+OUTPUT OPTIONS:
+  -audit-log          Write audit log containing all requests, responses and config
+  -debug-log          Write all of the internal logging to the specified file.
+  -o                  Write output to file
+  -od                 Directory path to store matched results to.
+  -of                 Output file format. Available formats: json, ejson, html, md, csv, ecsv (or, 'all' for all formats) (default: json)
+  -or                 Don't create the output file if we don't have results (default: false)
+
+EXAMPLE USAGE:
+  Fuzz file paths from wordlist.txt, match all responses but filter out those with content-size 42.
+  Colored, verbose output.
+    ffuf -w wordlist.txt -u https://example.org/FUZZ -mc all -fs 42 -c -v
+
+  Fuzz Host-header, match HTTP 200 responses.
+    ffuf -w hosts.txt -u https://example.org/ -H "Host: FUZZ" -mc 200
+
+  Fuzz POST JSON data. Match all responses not containing text "error".
+    ffuf -w entries.txt -u https://example.org/ -X POST -H "Content-Type: application/json" \
+      -d '{"name": "FUZZ", "anotherkey": "anothervalue"}' -fr "error"
+
+  Fuzz multiple locations. Match only responses reflecting the value of "VAL" keyword. Colored.
+    ffuf -w params.txt:PARAM -w values.txt:VAL -u https://example.org/?PARAM=VAL -mr "VAL" -c
+
+  More information and examples: https://github.com/ffuf/ffuf
+
+Encountered error(s): 1 errors occurred.
+        * stat /home/bantu/Documents/Networkwalks/week4/backup-extenstions.txt: no such file or directory
+
+❯ ffuf -w api-extenstions.txt -u https://medirozahospital.com/api/FUZZ
+
+Encountered error(s): 1 errors occurred.
+        * stat /home/bantu/Documents/Networkwalks/week4/api-extenstions.txt: no such file or directory
+
+Fuzz Faster U Fool - v2.3.0
+
+HTTP OPTIONS:
+  -H                  Header "Name: Value", separated by colon. Multiple -H flags are accepted.
+  -X                  HTTP method to use
+  -b                  Cookie data "NAME1=VALUE1; NAME2=VALUE2" for copy as curl functionality.
+  -cc                 Client cert for authentication. Client key needs to be defined as well for this to work
+  -ck                 Client key for authentication. Client certificate needs to be defined as well for this to work
+  -d                  POST data
+  -http2              Use HTTP2 protocol (default: false)
+  -ignore-body        Do not fetch the response content. (default: false)
+  -postflight         Raw HTTP request file to run after each fuzzing request (repeatable, order matters)
+  -postflight-var     Extract a variable from the preceding -postflight response: "NAME:regex" (repeatable)
+  -preflight          Raw HTTP request file to run before each fuzzing request (repeatable, order matters)
+  -preflight-error    Preflight error handling: "abort" or "ignore" (default: abort)
+  -preflight-mode     Preflight execution mode: "per-request" or "per-thread" (default: per-request)
+  -preflight-var      Extract a variable from the preceding -preflight response: "NAME:regex" (repeatable)
+  -r                  Follow redirects (default: false)
+  -raw                Do not encode URI (default: false)
+  -recursion          Scan recursively. Only FUZZ keyword is supported, and URL (-u) has to end in it. (default: false)
+  -recursion-depth    Maximum recursion depth. (default: 0)
+  -recursion-strategy Recursion strategy: "default" for a redirect based, and "greedy" to recurse on all matches (default: default)
+  -replay-proxy       Replay matched requests using this proxy.
+  -sni                Target TLS SNI, does not support FUZZ keyword
+  -timeout            HTTP request timeout in seconds. (default: 10)
+  -u                  Target URL
+  -x                  Proxy URL (SOCKS5 or HTTP). For example: http://127.0.0.1:8080 or socks5://127.0.0.1:8080
+
+GENERAL OPTIONS:
+  -V                  Show version information. (default: false)
+  -ac                 Automatically calibrate filtering options (default: false)
+  -acc                Custom auto-calibration string. Can be used multiple times. Implies -ac
+  -ach                Per host autocalibration (default: false)
+  -ack                Autocalibration keyword (default: FUZZ)
+  -acs                Custom auto-calibration strategies. Can be used multiple times. Implies -ac
+  -c                  Colorize output. (default: false)
+  -config             Load configuration from a file
+  -json               JSON output, printing newline-delimited JSON records (default: false)
+  -maxtime            Maximum running time in seconds for entire process. (default: 0)
+  -maxtime-job        Maximum running time in seconds per job. (default: 0)
+  -noninteractive     Disable the interactive console functionality (default: false)
+  -p                  Seconds of delay between requests, or a range of random delay. For example "0.1" or "0.1-2.0"
+  -rate               Rate of requests per second (default: 0)
+  -s                  Do not print additional information (silent mode) (default: false)
+  -sa                 Stop on all error cases. Implies -sf and -se. (default: false)
+  -scraperfile        Custom scraper file path
+  -scrapers           Active scraper groups (default: all)
+  -se                 Stop on spurious errors (default: false)
+  -search             Search for a FFUFHASH payload from ffuf history
+  -sf                 Stop when > 95% of responses return 403 Forbidden (default: false)
+  -t                  Number of concurrent threads. (default: 40)
+  -v                  Verbose output, printing full URL and redirect location (if any) with the results. (default: false)
+
+MATCHER OPTIONS:
+  -mc                 Match HTTP status codes, or "all" for everything. (default: 200-299,301,302,307,401,403,405,500)
+  -ml                 Match amount of lines in response
+  -mmode              Matcher set operator. Either of: and, or (default: or)
+  -mr                 Match regexp
+  -ms                 Match HTTP response size
+  -mt                 Match how many milliseconds to the first response byte, either greater or less than. EG: >100 or <100
+  -mw                 Match amount of words in response
+
+FILTER OPTIONS:
+  -fc                 Filter HTTP status codes from response. Comma separated list of codes and ranges
+  -fl                 Filter by amount of lines in response. Comma separated list of line counts and ranges
+  -fmode              Filter set operator. Either of: and, or (default: or)
+  -fr                 Filter regexp
+  -fs                 Filter HTTP response size. Comma separated list of sizes and ranges
+  -ft                 Filter by number of milliseconds to the first response byte, either greater or less than. EG: >100 or <100
+  -fw                 Filter by amount of words in response. Comma separated list of word counts and ranges
+
+INPUT OPTIONS:
+  -D                  DirSearch wordlist compatibility mode. Used in conjunction with -e flag. (default: false)
+  -e                  Comma separated list of extensions. Extends FUZZ keyword.
+  -enc                Encoders for keywords, eg. 'FUZZ:urlencode b64encode'
+  -ic                 Ignore wordlist comments (default: false)
+  -input-cmd          Command producing the input. --input-num is required when using this input method. Overrides -w.
+  -input-num          Number of inputs to test. Used in conjunction with --input-cmd. (default: 100)
+  -input-shell        Shell to be used for running command
+  -mode               Multi-wordlist operation mode. Available modes: clusterbomb, pitchfork, sniper (default: clusterbomb)
+  -request            File containing the raw http request
+  -request-proto      Protocol to use along with raw request (default: https)
+  -w                  Wordlist file path and (optional) keyword separated by colon. eg. '/path/to/wordlist:KEYWORD'
+
+OUTPUT OPTIONS:
+  -audit-log          Write audit log containing all requests, responses and config
+  -debug-log          Write all of the internal logging to the specified file.
+  -o                  Write output to file
+  -od                 Directory path to store matched results to.
+  -of                 Output file format. Available formats: json, ejson, html, md, csv, ecsv (or, 'all' for all formats) (default: json)
+  -or                 Don't create the output file if we don't have results (default: false)
+
+EXAMPLE USAGE:
+  Fuzz file paths from wordlist.txt, match all responses but filter out those with content-size 42.
+  Colored, verbose output.
+    ffuf -w wordlist.txt -u https://example.org/FUZZ -mc all -fs 42 -c -v
+
+  Fuzz Host-header, match HTTP 200 responses.
+    ffuf -w hosts.txt -u https://example.org/ -H "Host: FUZZ" -mc 200
+
+  Fuzz POST JSON data. Match all responses not containing text "error".
+    ffuf -w entries.txt -u https://example.org/ -X POST -H "Content-Type: application/json" \
+      -d '{"name": "FUZZ", "anotherkey": "anothervalue"}' -fr "error"
+
+  Fuzz multiple locations. Match only responses reflecting the value of "VAL" keyword. Colored.
+    ffuf -w params.txt:PARAM -w values.txt:VAL -u https://example.org/?PARAM=VAL -mr "VAL" -c
+
+  More information and examples: https://github.com/ffuf/ffuf
+
+Encountered error(s): 1 errors occurred.
+        * stat /home/bantu/Documents/Networkwalks/week4/api-extenstions.txt: no such file or directory
+
+❯ python3 paramspider.py -d medirozahospital.com
+
+python3: can't open file '/home/bantu/Documents/Networkwalks/week4/paramspider.py': [Errno 2] No such file or directory
+❯ sudo apt install waybackurls
+[sudo] password for bantu: 
+Error: Unable to locate package waybackurls
+❯ wafw00f https://medirozahospital.com
+
+                 ?              ,.   (   .      )        .      "
+         __        ??          ("     )  )'     ,'        )  . (`     '`
+    (___()'`;   ???          .; )  ' (( (" )    ;(,     ((  (  ;)  "  )")
+    /,___ /`                 _"., ,._'_.,)_(..,( . )_  _' )_') (. _..( ' )
+    \\   \\                 |____|____|____|____|____|____|____|____|____|
+
+                                ~ WAFW00F : v2.4.2 ~
+                    ~ Sniffing Web Application Firewalls since 2009 ~
+
+[*] Checking https://medirozahospital.com
+[+] The site https://medirozahospital.com is behind LiteSpeed (LiteSpeed Technologies) WAF.
+[~] Number of requests: 2
+❯ curl -X OPTIONS https://medirozahospital.com -v
+* Host medirozahospital.com:443 was resolved.
+* IPv6: (none)
+* IPv4: 199.188.201.16
+*   Trying 199.188.201.16:443...
+* ALPN: curl offers h2,http/1.1
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* SSL Trust Anchors:
+*   CAfile: /etc/ssl/certs/ca-certificates.crt
+*   CApath: /etc/ssl/certs
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / x25519 / RSASSA-PSS
+* ALPN: server accepted h2
+* Server certificate:
+*   subject: CN=medirozahospital.com
+*   start date: Aug 14 20:59:46 2026 GMT
+*   expire date: Feb 28 21:05:45 2027 GMT
+*   issuer: C=US; O=SSL Corporation; CN=SSL.com TLS Issuing RSA CA R1
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+*   Certificate level 1: Public key type RSA (3072/128 Bits/secBits), signed using sha256WithRSAEncryption
+*   Certificate level 2: Public key type RSA (4096/152 Bits/secBits), signed using sha256WithRSAEncryption
+*   subjectAltName: "medirozahospital.com" matches cert's "medirozahospital.com"
+* OpenSSL verify result: 0
+* SSL certificate verified via OpenSSL.
+* Established connection to medirozahospital.com (199.188.201.16 port 443) from 192.168.166.174 port 36348 
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://medirozahospital.com/
+* [HTTP/2] [1] [:method: OPTIONS]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: medirozahospital.com]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.22.0]
+* [HTTP/2] [1] [accept: */*]
+> OPTIONS / HTTP/2
+> Host: medirozahospital.com
+> User-Agent: curl/8.22.0
+> Accept: */*
+> 
+* Request completely sent off
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+< HTTP/2 200 
+< allow: OPTIONS,HEAD,GET,POST
+< content-length: 0
+< date: Mon, 23 Nov 2026 11:18:03 GMT
+< server: LiteSpeed
+< x-turbo-charged-by: LiteSpeed
+< 
+* Connection #0 to host medirozahospital.com:443 left intact
+❯ curl -I https://medirozahospital.com
+HTTP/2 200 
+content-type: text/html
+last-modified: Fri, 04 Sep 2026 02:03:12 GMT
+accept-ranges: bytes
+content-length: 5445
+date: Mon, 23 Nov 2026 11:19:35 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+❯ curl -I https://medirozahospital.com | grep -i strict
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0   5445   0      0   0      0      0      0           00:01              0
+❯ curl -H "Origin: https://evil.com " -I https://medirozahospital.com/api/data
+
+HTTP/2 404 
+date: Mon, 23 Nov 2026 11:22:10 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+❯ hydra -L users.txt -P passwords.txt https-post-form "//login.php:username=^USER^&password=^PASS^:F=incorrect"
+Hydra v9.7 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-11-23 14:24:15
+[ERROR] Unknown service: //login.php:username=^USER^&password=^PASS^:F=incorrect
+❯ hydra -L users.txt -P passwords.txt https-post-form "https://medirozahospital.com/patient/login.php:username=^USER^&password=^PASS^:F=incorrect"
+Hydra v9.7 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-11-23 14:26:38
+[ERROR] Unknown service: https://medirozahospital.com/patient/login.php:username=^USER^&password=^PASS^:F=incorrect
+❯ hydra -L users.txt -P passwords.txt medirozahospital.com https-post-form "/patient/login.php:username=^USER^&password=^PASS^:F=incorrect"
+Hydra v9.7 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-11-23 14:27:59
+[ERROR] File for logins not found: users.txt
+
+~/Documents/Networkwalks/week4 main* ❯ hydra -L users.txt -P passwords.txt medirozahospital.com https-post-form "/patient/login.php:username=^USER^&password=^PASS^:F=incorrect"

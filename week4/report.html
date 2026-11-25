@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Final Security Assessment Report — medirozahospital.com</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm 20mm 16mm;
+    @bottom-center {
+      content: "Malak Ventures · MV-CYB-2026-0092 · Week 4 Final Security Assessment";
+      font-family: "DejaVu Sans", sans-serif; font-size: 8pt; color: #8a8f98;
+    }
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: "DejaVu Sans", sans-serif; font-size: 8pt; color: #8a8f98;
+    }
+  }
+  @page :first { margin: 0; @bottom-center { content: ""; } @bottom-right { content: ""; } }
+
+  * { box-sizing: border-box; }
+  body {
+    font-family: "DejaVu Sans", "Segoe UI", Arial, sans-serif;
+    font-size: 10pt; line-height: 1.55; color: #23272e; margin: 0;
+  }
+  h1, h2, h3, h4 { color: #12324a; line-height: 1.25; }
+  h2 {
+    font-size: 17pt; margin: 0 0 6mm 0; padding-bottom: 2.5mm;
+    border-bottom: 2.5px solid #1f6f9c;
+  }
+  h3 { font-size: 12.5pt; margin: 6mm 0 2mm 0; color: #17516f; }
+  h4 { font-size: 10.5pt; margin: 4mm 0 1.5mm 0; color: #17516f; }
+  p { margin: 0 0 3mm 0; }
+  ul, ol { margin: 0 0 3mm 0; padding-left: 6mm; }
+  li { margin-bottom: 1.2mm; }
+  code, .mono {
+    font-family: "DejaVu Sans Mono", monospace; font-size: 8.6pt;
+    background: #f1f3f5; padding: 0.5px 3px; border-radius: 3px; color: #a3232b;
+  }
+  pre {
+    font-family: "DejaVu Sans Mono", monospace; font-size: 8pt; line-height: 1.45;
+    background: #1e2329; color: #d6e2ea; padding: 4mm 5mm; border-radius: 4px;
+    white-space: pre-wrap; word-wrap: break-word; margin: 2mm 0 4mm 0;
+    border-left: 4px solid #1f6f9c;
+  }
+  pre .c { color: #7f9aad; }
+  section { page-break-before: always; }
+
+  /* Cover */
+  .cover { height: 297mm; padding: 30mm 22mm; color: #e8f2f8;
+    background: linear-gradient(150deg,#0b2233 0%, #123c56 55%, #17516f 100%); }
+  .cover .kicker { font-size: 11pt; letter-spacing: 3px; color: #8fd0f0; text-transform: uppercase; font-weight: bold; }
+  .cover h1 { color: #ffffff; font-size: 30pt; margin: 14mm 0 4mm 0; line-height: 1.15; }
+  .cover .sub { font-size: 13pt; color: #bfe0f2; margin-bottom: 22mm; }
+  .cover .rule { width: 40mm; height: 3px; background: #8fd0f0; margin: 0 0 12mm 0; }
+  .cover table { width: 100%; border-collapse: collapse; font-size: 10.5pt; }
+  .cover table td { padding: 2.2mm 0; border-bottom: 1px solid rgba(255,255,255,0.18); vertical-align: top; }
+  .cover table td:first-child { color: #8fd0f0; width: 42mm; font-weight: bold; }
+  .cover .foot { position: absolute; bottom: 24mm; font-size: 9pt; color: #9fc4d8; }
+
+  /* Tables */
+  table.data { width: 100%; border-collapse: collapse; margin: 2mm 0 5mm 0; font-size: 9pt; }
+  table.data th { background: #123c56; color: #fff; text-align: left; padding: 2.4mm 3mm; font-weight: bold; }
+  table.data td { padding: 2.2mm 3mm; border-bottom: 1px solid #dfe6ec; vertical-align: top; }
+  table.data tr:nth-child(even) td { background: #f6f9fb; }
+
+  .badge { display: inline-block; padding: 0.6mm 2.6mm; border-radius: 10px; font-size: 8pt; font-weight: bold; color: #fff; }
+  .b-done { background: #2e8b57; }
+  .b-block { background: #c0392b; }
+  .b-na { background: #7b8794; }
+  .b-part { background: #d68910; }
+
+  .sev { font-weight: bold; }
+  .sev-high { color: #c0392b; }
+  .sev-med { color: #d68910; }
+  .sev-low { color: #1f6f9c; }
+  .sev-info { color: #5d6d7e; }
+
+  figure { margin: 3mm 0 5mm 0; page-break-inside: avoid; }
+  figure img { width: 100%; border: 1px solid #cdd8e0; border-radius: 4px; }
+  figcaption { font-size: 8.4pt; color: #5d6d7e; margin-top: 1.8mm; font-style: italic; }
+  .callout {
+    background: #fdf3f2; border-left: 4px solid #c0392b; padding: 3mm 4mm;
+    border-radius: 3px; margin: 3mm 0 4mm 0; font-size: 9.3pt;
+  }
+  .callout.info { background: #eef6fb; border-left-color: #1f6f9c; }
+  .callout.ok { background: #eef8f1; border-left-color: #2e8b57; }
+  .kv { font-size: 9pt; }
+  .toc li { margin-bottom: 1.6mm; }
+  .small { font-size: 8.6pt; color: #5d6d7e; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="kicker">Malak Ventures · Cybersecurity Internship</div>
+  <h1>Final Security Assessment Report</h1>
+  <div class="sub">Vulnerability Assessment &amp; Penetration Testing<br>Target: medirozahospital.com</div>
+  <div class="rule"></div>
+  <table>
+    <tr><td>Intern</td><td>Raphael Osindi</td></tr>
+    <tr><td>Application ID</td><td>MV-CYB-2026-0092</td></tr>
+    <tr><td>Program</td><td>Cybersecurity</td></tr>
+    <tr><td>Sub-Niche</td><td>Cyber Threat Intelligence</td></tr>
+    <tr><td>Skill Level</td><td>Intermediate</td></tr>
+    <tr><td>Duration</td><td>4 Weeks (Start: 2026-10-19)</td></tr>
+    <tr><td>Phase</td><td>Week 4 — Finalization &amp; Professional Report</td></tr>
+    <tr><td>Target</td><td>medirozahospital.com (NetworkWalks VAPT lab — Batch B082)</td></tr>
+    <tr><td>Report Date</td><td>25 November 2026</td></tr>
+  </table>
+  <div class="foot">Authorized laboratory environment only. No live production or third-party systems were targeted.</div>
+</div>
+
+<!-- TOC / DOC CONTROL -->
+<section>
+  <h2>Document Control &amp; Contents</h2>
+  <table class="data">
+    <tr><th>Field</th><th>Detail</th></tr>
+    <tr><td>Report Title</td><td>Final Security Assessment Report — medirozahospital.com</td></tr>
+    <tr><td>Engagement Type</td><td>Vulnerability Assessment &amp; Penetration Testing (lab)</td></tr>
+    <tr><td>Assessment Window</td><td>23–25 November 2026</td></tr>
+    <tr><td>Target Scope</td><td>medirozahospital.com and its discovered subdomains (199.188.201.16)</td></tr>
+    <tr><td>Methodology</td><td>PTES-aligned: Recon → Enumeration → Vulnerability Analysis → Gaining Access → Exploitation → Post-Exploitation → Reporting</td></tr>
+    <tr><td>Classification</td><td>Internal / Training — sanitized (no credentials included)</td></tr>
+  </table>
+
+  <h3>Contents</h3>
+  <ol class="toc">
+    <li>Executive Summary</li>
+    <li>Scope, Authorization &amp; Rules of Engagement</li>
+    <li>Methodology &amp; Tooling</li>
+    <li>Engagement Progress at a Glance</li>
+    <li>Phase 1 — Reconnaissance &amp; OSINT</li>
+    <li>Phase 2 — Enumeration &amp; Service Discovery</li>
+    <li>Phase 3 — Vulnerability Analysis (Findings)</li>
+    <li>Phase 4 — Gaining Access (Blocked — Analysis)</li>
+    <li>Phase 5 — Exploitation (Not Achieved)</li>
+    <li>Phase 6 — Post-Exploitation (Not Reached)</li>
+    <li>Problems Encountered &amp; Resolutions</li>
+    <li>Remediation Recommendations</li>
+    <li>Conclusion &amp; Learning Outcomes</li>
+    <li>Evidence Index</li>
+  </ol>
+</section>
+
+<!-- EXEC SUMMARY -->
+<section>
+  <h2>1. Executive Summary</h2>
+  <p>This report documents a structured security assessment of <strong>medirozahospital.com</strong>, a NetworkWalks Academy Vulnerability Assessment &amp; Penetration Testing (VAPT) laboratory target (Batch B082). The engagement followed a PTES-aligned methodology across six phases and evaluated public-facing infrastructure, DNS footprint, exposed web content, transport-layer security, and the authentication surface.</p>
+
+  <p>The reconnaissance and enumeration phases were completed successfully. The target resolves to <strong>199.188.201.16</strong> (<code>server274-1.web-hosting.com</code>, United States) on Namecheap shared hosting. A LiteSpeed web server sits behind an active <strong>LiteSpeed Web Application Firewall (WAF)</strong>. The cryptographic posture is modern (TLS 1.2/1.3 only, strong ciphers, valid SSL.com certificate), but the application layer exposes several weaknesses: directory indexing on sensitive paths, exposed administrative and webmail interfaces, and a complete absence of defensive HTTP security headers.</p>
+
+  <div class="callout">
+    <strong>Status of the active phases.</strong> Reconnaissance, enumeration and vulnerability analysis are complete. During the Gaining Access phase the initial credential attempt produced false positives (a misconfigured failure string), and the target's WAF temporarily escalated to a site-wide JavaScript challenge. Once the browser session cleared the challenge, manual analysis uncovered the most significant weakness of the engagement: <strong>an exposed database backup containing staff and shareholder PII</strong> (names, emails, phone numbers, national ID numbers and salaries), together with live directory indexing and a <strong>username-enumeration flaw</strong> that confirmed <code>admin</code> as a valid account. A corrected credential test still did not recover the password. Consequently, <em>Exploitation</em> and <em>Post-Exploitation</em> were not reached. This report documents the full analysis, the root causes, and the corrective path forward.
+  </div>
+
+  <table class="data">
+    <tr><th>Attribute</th><th>Assessment Details</th></tr>
+    <tr><td>Target Domain</td><td>medirozahospital.com</td></tr>
+    <tr><td>Resolved IP</td><td>199.188.201.16 (US) — server274-1.web-hosting.com</td></tr>
+    <tr><td>Hosting</td><td>Namecheap shared hosting / cPanel</td></tr>
+    <tr><td>Web Server</td><td>LiteSpeed (header: x-turbo-charged-by: LiteSpeed)</td></tr>
+    <tr><td>Security Control</td><td>LiteSpeed WAF + JS anti-bot challenge (active)</td></tr>
+    <tr><td>TLS</td><td>TLS 1.2 / 1.3 only; RSA-2048; valid to Feb 2027</td></tr>
+    <tr><td>Overall Risk Rating</td><td><span class="sev sev-high">High</span> (exposed PII backup + application-layer exposure)</td></tr>
+    <tr><td>Access Achieved</td><td>Partial — valid username identified (<code>admin</code>) via enumeration; password not obtained</td></tr>
+  </table>
+</section>
+
+<!-- SCOPE -->
+<section>
+  <h2>2. Scope, Authorization &amp; Rules of Engagement</h2>
+  <p>The assessment was performed strictly against an authorized training target provided within the NetworkWalks Academy VAPT program. Public OSINT confirmed the domain is designated as an educational lab rather than an active production medical facility, and that it is associated with the Batch B082 internship project.</p>
+
+  <figure>
+    <img src="file:///home/bantu/Documents/Networkwalks/week4/reconss1.png" alt="OSINT scope confirmation">
+    <figcaption>Figure 1 — Public OSINT confirming the target is an authorized NetworkWalks VAPT lab environment (Batch B082).</figcaption>
+  </figure>
+
+  <h3>Rules of Engagement</h3>
+  <ul>
+    <li>Testing limited to the designated lab domain and its discovered subdomains.</li>
+    <li>No denial-of-service, no destructive actions, no data exfiltration beyond proof-of-concept.</li>
+    <li>No real credentials, secrets, or private keys are reproduced in this report; password values are redacted.</li>
+    <li>Rate-limiting respected; testing paused when the WAF began serving site-wide challenges.</li>
+  </ul>
+</section>
+
+<!-- METHODOLOGY -->
+<section>
+  <h2>3. Methodology &amp; Tooling</h2>
+  <p>The engagement followed a six-phase PTES-aligned workflow. Each phase produced concrete artifacts that fed the next.</p>
+  <table class="data">
+    <tr><th>Phase</th><th>Objective</th><th>Primary Tools</th></tr>
+    <tr><td>1. Reconnaissance</td><td>Passive footprint, WHOIS, OSINT</td><td>whois, theHarvester, Google, dnsrecon</td></tr>
+    <tr><td>2. Enumeration</td><td>Ports, services, subdomains, web stack</td><td>nmap, dnsrecon, whatweb, wafw00f, openssl, sslscan, nikto</td></tr>
+    <tr><td>3. Vulnerability Analysis</td><td>Identify weaknesses &amp; misconfigurations</td><td>nikto, curl, robots/sitemap review, manual analysis</td></tr>
+    <tr><td>4. Gaining Access</td><td>Obtain valid authentication</td><td>hydra (manual review), browser-based testing</td></tr>
+    <tr><td>5. Exploitation</td><td>Leverage a confirmed weakness</td><td>— (not reached)</td></tr>
+    <tr><td>6. Post-Exploitation</td><td>Privilege, persistence, data access</td><td>— (not reached)</td></tr>
+  </table>
+</section>
+
+<!-- PROGRESS -->
+<section>
+  <h2>4. Engagement Progress at a Glance</h2>
+  <table class="data">
+    <tr><th>Phase</th><th>Status</th><th>Notes</th></tr>
+    <tr><td>Reconnaissance &amp; OSINT</td><td><span class="badge b-done">COMPLETE</span></td><td>Domain, registrar, DNS, hosts, mail records mapped.</td></tr>
+    <tr><td>Enumeration &amp; Service Discovery</td><td><span class="badge b-done">COMPLETE</span></td><td>Ports, subdomains, TLS and web stack identified.</td></tr>
+    <tr><td>Vulnerability Analysis</td><td><span class="badge b-done">COMPLETE</span></td><td>Eleven findings documented with CWE mapping.</td></tr>
+    <tr><td>Gaining Access</td><td><span class="badge b-part">PARTIAL</span></td><td>Valid user <code>admin</code> confirmed via enumeration; password not recovered; WAF/anti-bot + rate limiting.</td></tr>
+    <tr><td>Exploitation</td><td><span class="badge b-na">NOT ACHIEVED</span></td><td>No valid session existed to leverage.</td></tr>
+    <tr><td>Post-Exploitation</td><td><span class="badge b-na">NOT REACHED</span></td><td>Dependent on prior phase.</td></tr>
+    <tr><td>Reporting</td><td><span class="badge b-done">COMPLETE</span></td><td>This consolidated report with captured evidence.</td></tr>
+  </table>
+  <div class="callout info">
+    The majority of the technical work (phases 1–3) is complete and well-evidenced. The remaining gap is a single dependency: obtaining a valid authenticated session, which is gated by the WAF/anti-bot control rather than by a missing vulnerability.
+  </div>
+</section>
+
+<!-- PHASE 1 -->
+<section>
+  <h2>5. Phase 1 — Reconnaissance &amp; OSINT</h2>
+  <h3>Domain &amp; Ownership</h3>
+  <table class="data">
+    <tr><th>Record</th><th>Value</th></tr>
+    <tr><td>Registrar</td><td>Namecheap, Inc. (IANA 1068)</td></tr>
+    <tr><td>Created / Expires</td><td>2026-08-14 / 2027-08-14</td></tr>
+    <tr><td>Registrant</td><td>Privacy-protected (Withheld for Privacy LLC)</td></tr>
+    <tr><td>Name Servers</td><td>dns1.namecheaphosting.com, dns2.namecheaphosting.com</td></tr>
+    <tr><td>DNSSEC</td><td>Unsigned</td></tr>
+    <tr><td>SPF</td><td>v=spf1 +a +mx +ip4:199.188.201.7 +ip4:199.188.201.38 include:spf.web-hosting.com ~all</td></tr>
+    <tr><td>DMARC</td><td>v=DMARC1; p=none; <span class="sev sev-low">(monitor-only — weak enforcement)</span></td></tr>
+    <tr><td>MX</td><td>mx1/mx2/mx3-hosting.jellyfish.systems</td></tr>
+  </table>
+
+  <h3>Discovered Hosts / Subdomains</h3>
+  <ul>
+    <li><strong>medirozahospital.com</strong> → 199.188.201.16 (primary)</li>
+    <li><strong>www.medirozahospital.com</strong> → CNAME to primary (confirmed via certificate SAN)</li>
+    <li><strong>ftp.medirozahospital.com</strong> → file-transfer host</li>
+    <li><strong>heartpatient.medirozahospital.com</strong> → patient subdomain (199.188.201.16)</li>
+    <li><strong>mail.medirozahospital.com</strong> / <strong>webmail.</strong> / <strong>autodiscover.</strong> → mail infrastructure</li>
+  </ul>
+  <p class="small">Note: theHarvester reported a stale/alternate IP (199.188.201.16) alongside unrelated ranges; the authoritative A record and certificate SAN both confirm 199.188.201.16 as the live target.</p>
+</section>
+
+<!-- PHASE 2 -->
+<section>
+  <h2>6. Phase 2 — Enumeration &amp; Service Discovery</h2>
+  <h3>Open TCP Ports</h3>
+  <pre><span class="c"># nmap medirozahospital.com (199.188.201.16) — top TCP ports</span>
+PORT     STATE  SERVICE
+20/tcp   closed ftp-data
+21/tcp   open   ftp
+25/tcp   open   smtp
+26/tcp   open   rsftp
+53/tcp   open   domain
+80/tcp   open   http
+110/tcp  open   pop3
+143/tcp  open   imap
+443/tcp  open   https
+465/tcp  open   smtps
+587/tcp  open   submission
+993/tcp  open   imaps
+995/tcp  open   pop3s</pre>
+
+  <div class="callout">
+    <strong>Methodology note (IP error).</strong> The full-port scans were mistakenly run against <code>192.188.201.16</code> instead of <code>199.188.201.16</code>. That unrelated host only exposed 53/tcp (Mikrotik dnsd), and the follow-up web-port scan reported 80/443 as “filtered”. Those results are invalid for this target; the accurate port picture above comes from the correctly-scoped service scan.
+  </div>
+
+  <h3>Web Server &amp; Technology Stack</h3>
+  <ul>
+    <li><strong>Server:</strong> LiteSpeed — headers <code>server: LiteSpeed</code> and <code>x-turbo-charged-by: LiteSpeed</code>.</li>
+    <li><strong>WAF:</strong> LiteSpeed WAF confirmed via <code>wafw00f</code>; returns HTTP 403 to automated scanners (whatweb, wpscan) using non-browser user-agents.</li>
+    <li><strong>Content:</strong> Static HTML5 pages; <code>robots.txt</code> disallows <code>/patient/</code>, <code>/staff/</code>, <code>/old/</code>; sitemap lists index/about/doctors/contact.</li>
+    <li><strong>Allowed methods:</strong> OPTIONS, HEAD, GET, POST.</li>
+  </ul>
+
+  <h3>TLS / SSL Configuration</h3>
+  <table class="data">
+    <tr><th>Parameter</th><th>Result</th><th>Assessment</th></tr>
+    <tr><td>Protocols</td><td>SSLv2/3, TLS 1.0/1.1 disabled; TLS 1.2 &amp; 1.3 enabled</td><td><span class="sev sev-high" style="color:#2e8b57">Pass</span></td></tr>
+    <tr><td>Ciphers</td><td>AEAD suites (AES-GCM, CHACHA20); curve25519</td><td><span style="color:#2e8b57" class="sev">Pass</span></td></tr>
+    <tr><td>Heartbleed</td><td>Not vulnerable</td><td><span style="color:#2e8b57" class="sev">Pass</span></td></tr>
+    <tr><td>Renegotiation / Compression</td><td>Disabled</td><td><span style="color:#2e8b57" class="sev">Pass</span></td></tr>
+    <tr><td>Certificate</td><td>CN medirozahospital.com; SAN www; SSL.com RSA-2048; valid 2026-08-14 → 2027-02-28</td><td><span style="color:#2e8b57" class="sev">Valid</span></td></tr>
+    <tr><td>HSTS</td><td>Strict-Transport-Security missing</td><td><span class="sev sev-med">Weakness</span></td></tr>
+  </table>
+
+  <figure>
+    <img src="file:///home/bantu/Documents/Networkwalks/week4/openssl.png" alt="OpenSSL TLS handshake evidence">
+    <figcaption>Figure 2 — OpenSSL <code>s_client</code> handshake confirming TLS 1.3, cipher TLS_AES_256_GCM_SHA384, RSA-2048 public key, and certificate verification OK.</figcaption>
+  </figure>
+</section>
+
+<!-- PHASE 3 -->
+<section>
+  <h2>7. Phase 3 — Vulnerability Analysis (Findings)</h2>
+
+  <h3>Finding 1 — Exposed Sensitive Directories &amp; Directory Indexing</h3>
+  <ul>
+    <li><strong>Severity:</strong> <span class="sev sev-high">High</span> · <strong>CWE:</strong> CWE-548 (Information Exposure Through Directory Listing)</li>
+    <li><strong>Details:</strong> <code>robots.txt</code> discloses <code>/patient/</code>, <code>/staff/</code> and <code>/old/</code>; Nikto confirmed directory indexing is active on all three.</li>
+    <li><strong>Impact:</strong> Unauthenticated browsing of internal file trees, potentially revealing medical records, staff data, and legacy assets.</li>
+  </ul>
+
+  <h3>Finding 2 — Exposed Administrative &amp; Mail Interfaces</h3>
+  <ul>
+    <li><strong>Severity:</strong> <span class="sev sev-med">Medium</span> · <strong>CWE:</strong> CWE-552</li>
+    <li><strong>Details:</strong> <code>/cpanel/</code> and <code>/securecontrolpanel/</code> (hosting control panels), <code>/webmail/</code> (IlohaMail 0.8.10 — known XSS), <code>/mailman/listinfo</code> (GNU Mailman).</li>
+    <li><strong>Impact:</strong> Expanded attack surface for credential brute-forcing and software-specific exploitation.</li>
+  </ul>
+
+  <h3>Finding 3 — Missing HTTP Security Headers</h3>
+  <ul>
+    <li><strong>Severity:</strong> <span class="sev sev-low">Low–Medium</span> · <strong>CWE:</strong> CWE-693</li>
+    <li><strong>Details:</strong> Missing Strict-Transport-Security, Content-Security-Policy, X-Content-Type-Options, Referrer-Policy, and Permissions-Policy.</li>
+    <li><strong>Impact:</strong> Increased exposure to clickjacking, MIME-sniffing, protocol downgrade, and content-injection attacks.</li>
+  </ul>
+
+  <h3>Finding 4 — Public Sitemap &amp; Endpoint Enumeration</h3>
+  <ul>
+    <li><strong>Severity:</strong> <span class="sev sev-info">Informational</span></li>
+    <li><strong>Details:</strong> <code>/sitemap.xml</code> enumerates <code>/index.html</code>, <code>/about.html</code>, <code>/doctors.html</code>, <code>/contact.html</code>.</li>
+    <li><strong>Impact:</strong> Facilitates targeted content discovery (reconnaissance aid).</li>
+  </ul>
+
+  <h3>Finding 5 — Weak Email Authentication Policy</h3>
+  <ul>
+    <li><strong>Severity:</strong> <span class="sev sev-low">Low</span></li>
+    <li><strong>Details:</strong> DMARC record set to <code>p=none</code>; SPF ends in <code>~all</code> (soft fail).</li>
+    <li><strong>Impact:</strong> Reduced protection against email spoofing and phishing.</li>
+  </ul>
+
+  <h3>Finding 6 — Automated-Scanner Blocking &amp; Anti-Bot Escalation</h3>
+  <ul>
+    <li><strong>Severity:</strong> <span class="sev sev-info">Informational</span></li>
+    <li><strong>Details:</strong> LiteSpeed WAF returns 403 to standard scanners and temporarily served a site-wide JavaScript browser-verification challenge after heavy automated traffic. This is a <em>defensive strength</em>, but it constrains automated testing and requires browser-driven methods.</li>
+  </ul>
+
+  <h3>Finding 7 — Exposed Database Backup Containing Sensitive PII</h3>
+  <ul>
+    <li><strong>Severity:</strong> <span class="sev sev-high">Critical</span> · <strong>CWE:</strong> CWE-538 (File/Directory Information Exposure), CWE-200</li>
+    <li><strong>Details:</strong> <code>/old/mediroza_db_backup_2019.sql</code> (≈6.3 KB) is downloadable without authentication. It contains the <code>staff</code> and <code>shareholders</code> tables with names, roles, departments, corporate email addresses, phone numbers, <strong>national ID numbers</strong>, salaries and hire dates.</li>
+    <li><strong>Impact:</strong> Serious data-protection/regulatory exposure and a ready-made target list for social engineering and phishing.</li>
+  </ul>
+
+  <h3>Finding 8 — Username Enumeration on Authentication Endpoints</h3>
+  <ul>
+    <li><strong>Severity:</strong> <span class="sev sev-med">Medium</span> · <strong>CWE:</strong> CWE-204 (Observable Response Discrepancy)</li>
+    <li><strong>Details:</strong> <code>/patient/login.php</code> and <code>/staff/login.php</code> return <code>Username not found</code> for a non-existent account versus <code>Incorrect password</code> for a valid one. This confirmed <code>admin</code> as a valid account.</li>
+    <li><strong>Impact:</strong> Enables reliable account discovery, accelerating credential attacks.</li>
+  </ul>
+
+  <h3>Finding 9 — Live Directory Indexing Exposing Application Files</h3>
+  <ul>
+    <li><strong>Severity:</strong> <span class="sev sev-high">High</span> · <strong>CWE:</strong> CWE-548</li>
+    <li><strong>Details:</strong> <code>/old/</code>, <code>/patient/</code> and <code>/staff/</code> render file listings. <code>/patient/</code> exposes <code>reports/</code>, <code>download.php</code>, <code>error_log</code> (251 KB), <code>portal.php</code> and <code>logout.php</code>; <code>/staff/</code> exposes <code>login.php</code>.</li>
+    <li><strong>Impact:</strong> Maps the internal application structure and reveals a downloadable database backup (Finding 7).</li>
+  </ul>
+
+  <h3>Finding 10 — Technology &amp; Version Disclosure</h3>
+  <ul>
+    <li><strong>Severity:</strong> <span class="sev sev-low">Low</span> · <strong>CWE:</strong> CWE-200</li>
+    <li><strong>Details:</strong> <code>X-Powered-By: PHP/8.2.36</code> header and <code>&lt;meta name="generator" content="Mediroza CMS 1.4.2"&gt;</code>.</li>
+    <li><strong>Impact:</strong> Aids attackers in matching exploits to specific versions.</li>
+  </ul>
+
+  <h3>Finding 11 — Weak Session Cookie Attributes</h3>
+  <ul>
+    <li><strong>Severity:</strong> <span class="sev sev-low">Low–Medium</span> · <strong>CWE:</strong> CWE-1004 / CWE-1275</li>
+    <li><strong>Details:</strong> <code>Set-Cookie: PHPSESSID=…; path=/; secure</code> — <code>HttpOnly</code> and <code>SameSite</code> are not set.</li>
+    <li><strong>Impact:</strong> Session cookies are exposed to client-side script access (XSS) and cross-site request behaviour.</li>
+  </ul>
+
+  <figure>
+    <img src="file:///home/bantu/Documents/Networkwalks/week4/evidence/shot_old_listing.png" alt="Index of /old/ exposing DB backup">
+    <figcaption>Figure 3 — Live capture: <code>Index of /old/</code> exposes <code>mediroza_db_backup_2019.sql</code> to unauthenticated users.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="file:///home/bantu/Documents/Networkwalks/week4/evidence/shot_patient_listing.png" alt="Index of /patient/ exposing application files">
+    <figcaption>Figure 4 — Live capture: <code>Index of /patient/</code> exposes <code>reports/</code>, <code>download.php</code>, <code>error_log</code>, <code>portal.php</code> and <code>logout.php</code>.</figcaption>
+  </figure>
+</section>
+
+<!-- PHASE 4 -->
+<section>
+  <h2>8. Phase 4 — Gaining Access</h2>
+  <p>The first attempt failed because of a false-positive detector combined with a temporary anti-bot escalation. After clearing the challenge with a real browser session, the login endpoint was analysed properly: a valid account (<code>admin</code>) was confirmed through username enumeration, but the password was not recovered.</p>
+
+  <h3>8.1 Initial blocker — anti-bot challenge and a false positive</h3>
+  <p>Heavy automated traffic triggered a site-wide JavaScript challenge ("Please wait while your request is being verified…"), which automated clients cannot pass. In this state the original credential run reported <em>"16 valid passwords found"</em>, which was invalid because (i) <code>-l user.txt</code> sent a filename as the username, (ii) the failure string <code>F=incorrect</code> never appeared in the anti-bot page, so every attempt scored as success, and (iii) no session was ever established.</p>
+
+  <figure>
+    <img src="file:///home/bantu/Documents/Networkwalks/week4/evidence/shot_home.png" alt="Live anti-bot challenge page">
+    <figcaption>Figure 5 — The LiteSpeed JavaScript browser-verification challenge that blocked automated tooling (captured 25 Nov 2026).</figcaption>
+  </figure>
+
+  <figure>
+    <img src="file:///home/bantu/Documents/Networkwalks/week4/evidence/users_terminal_redacted.png" alt="Hydra false-positive output (passwords redacted)">
+    <figcaption>Figure 6 — Original hydra run: the "16 valid passwords found" line is a false positive caused by the non-matching failure string (password values redacted per submission rules).</figcaption>
+  </figure>
+
+  <h3>8.2 Correct procedure and corrected result</h3>
+  <p>With the challenge cleared in a real browser, the true login form was recovered: <code>method="POST" action="login.php"</code>, fields <code>username</code> and <code>password</code>, and <strong>no CSRF token</strong>. Response analysis revealed a username-enumeration flaw (Finding 8): a non-existent user returns <code>Username not found</code>, while a valid user with a wrong password returns <code>Incorrect password</code>. This confirmed <code>admin</code> as a valid account.</p>
+
+  <figure>
+    <img src="file:///home/bantu/Documents/Networkwalks/week4/evidence/shot_login_real.png" alt="Patient portal login page">
+    <figcaption>Figure 7 — The real patient portal login page (username/password only, no CSRF token).</figcaption>
+  </figure>
+
+  <pre><span class="c"># Corrected hydra invocation (valid user + exact failure string):</span>
+$ hydra -l admin -P targeted_passwords.txt -t 2 -f -V -s 443 medirozahospital.com \
+    https-post-form "/patient/login.php:username=^USER^&password=^PASS^:F=Incorrect password"</pre>
+
+  <p>A targeted 130-entry list (<code>targeted_passwords.txt</code>) completed with <strong>0 false positives and 0 hits</strong>, and a broader 1,050-entry common-password list was likewise exhausted at the rate-limited throughput (≈40 attempts/min) without a match. The method is now correct; the password is simply not a common one.</p>
+
+  <div class="callout">
+    <strong>Conclusion for this phase.</strong> The detection logic is fixed and a valid username (<code>admin</code>) is confirmed, but no password was recovered, so <strong>no authenticated session was obtained</strong>. Brute force is impractical here because of rate limiting, so access should be pursued via the lab-supplied credentials or the exposed data identified in Phase 3.
+  </div>
+</section>
+
+<!-- PHASE 5 & 6 -->
+<section>
+  <h2>9. Phase 5 — Exploitation (Not Achieved)</h2>
+  <p>Exploitation was not performed because no valid authenticated session or confirmed exploitable vector was established in Phase 4. The vulnerabilities identified in Phase 3 are documented and rated, but were not weaponized. Any exploitation would in this authorized lab require first resolving the access blocker below.</p>
+
+  <h2>10. Phase 6 — Post-Exploitation (Not Reached)</h2>
+  <p>Post-exploitation (privilege enumeration, lateral movement, persistence, data-access proof-of-concept) was not reached. It depends entirely on first obtaining a foothold in Phase 4. This section is recorded as <strong>not reached</strong> for completeness and honest reporting.</p>
+
+  <div class="callout ok">
+    <strong>Path to unblock (authorized lab only).</strong>
+    <ol style="margin-bottom:0">
+      <li>Pause automated traffic; request an IP reset/whitelist from the lab provider so the JS challenge clears.</li>
+      <li>Use a real browser to pass verification, then inspect <code>/patient/login.php</code> (form action, hidden CSRF tokens, cookies, and the true failure response).</li>
+      <li>Retest manually with lab-supplied or documented default credentials — not a full rockyou brute force.</li>
+      <li>Re-run content discovery against the correct IP with proper wordlists and low rate; check <code>/old/</code>, <code>/staff/</code>, <code>/patient/</code>, <code>/webmail/</code>.</li>
+      <li>Only then proceed to post-authentication enumeration and document post-exploitation.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section>
+  <h2>11. Problems Encountered &amp; Resolutions</h2>
+  <table class="data">
+    <tr><th>#</th><th>Problem</th><th>Root Cause</th><th>Resolution / Status</th></tr>
+    <tr><td>1</td><td>Full-port scan found only DNS</td><td>Scan run against 192.188.201.16 instead of 199.188.201.16</td><td>Identified; re-scan against correct IP required</td></tr>
+    <tr><td>2</td><td>wpscan / whatweb blocked with 403</td><td>LiteSpeed WAF filters non-browser user-agents</td><td>Use browser-like UA, throttling; or manual testing</td></tr>
+    <tr><td>3</td><td>ffuf "no such file" errors</td><td>Missing wordlists; typo "extenstions"</td><td>Use <code>/usr/share/seclists</code> paths</td></tr>
+    <tr><td>4</td><td>dirb fatal connection errors</td><td>URL and wordlist concatenated into one argument</td><td>Pass URL and wordlist as separate arguments</td></tr>
+    <tr><td>5</td><td>hydra syntax errors ("Unknown service", "File not found")</td><td>Wrong service format; missing wordlists</td><td>Corrected; but result was a false positive (see 8.2)</td></tr>
+    <tr><td>6</td><td>sublist3r / amass crashed</td><td>Python 3.14 / libpostal environment incompatibility</td><td>Used dnsrecon and theHarvester instead</td></tr>
+    <tr><td>7</td><td>Site-wide "One moment, please..." page</td><td>WAF anti-bot escalated after aggressive scanning</td><td>Reduce traffic; use manual browser interaction</td></tr>
+  </table>
+</section>
+
+<!-- REMEDIATION -->
+<section>
+  <h2>12. Remediation Recommendations</h2>
+  <table class="data">
+    <tr><th>Priority</th><th>Recommendation</th></tr>
+    <tr><td><span class="sev sev-high">Immediate</span></td><td><strong>Delete the exposed backup</strong> <code>/old/mediroza_db_backup_2019.sql</code> from the web root and purge it from all publicly reachable locations; treat the exposed PII as a data breach (notification/regulatory review).</td></tr>
+    <tr><td><span class="sev sev-high">Immediate</span></td><td>Disable directory indexing globally (<code>Options -Indexes</code>) and ensure <code>/patient/</code>, <code>/staff/</code>, <code>/old/</code> do not render file trees.</td></tr>
+    <tr><td><span class="sev sev-high">Immediate</span></td><td>Remove or archive the legacy <code>/old/</code> directory from the public web root, and remove <code>error_log</code> from web-accessible paths.</td></tr>
+    <tr><td><span class="sev sev-high">High</span></td><td>Return a generic authentication error (e.g. "Invalid username or password") for both unknown users and wrong passwords, to eliminate the username-enumeration discrepancy.</td></tr>
+    <tr><td><span class="sev sev-med">Medium</span></td><td>Set session cookies with <code>HttpOnly</code> and <code>SameSite</code> (and keep <code>Secure</code>), and suppress <code>X-Powered-By</code> / CMS version metadata.</td></tr>
+    <tr><td><span class="sev sev-med">High</span></td><td>Restrict <code>/cpanel/</code>, <code>/securecontrolpanel/</code>, and <code>/webmail/</code> to management IP allowlists or VPN; update IlohaMail or retire it.</td></tr>
+    <tr><td><span class="sev sev-med">High</span></td><td>Enforce session-based authentication with account lockout and MFA on patient/staff portals.</td></tr>
+    <tr><td><span class="sev sev-med">Medium</span></td><td>Add defensive HTTP headers: HSTS (<code>max-age=31536000; includeSubDomains; preload</code>), CSP, X-Content-Type-Options (<code>nosniff</code>), X-Frame-Options (<code>SAMEORIGIN</code>), Referrer-Policy, Permissions-Policy.</td></tr>
+    <tr><td><span class="sev sev-low">Medium</span></td><td>Harden email authentication: move DMARC to <code>p=reject</code> (after monitoring) and tighten SPF from <code>~all</code> to <code>-all</code>.</td></tr>
+    <tr><td><span class="sev sev-low">Low</span></td><td>Review sitemap/robots disclosure and remove any entries not intended for public discovery.</td></tr>
+  </table>
+
+  <h3>Hardening Header Example</h3>
+  <pre>Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Content-Security-Policy: default-src 'self'; script-src 'self'; object-src 'none';
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=()</pre>
+</section>
+
+<!-- CONCLUSION -->
+<section>
+  <h2>13. Conclusion &amp; Learning Outcomes</h2>
+  <p>The assessment successfully completed reconnaissance, enumeration, and vulnerability analysis, producing a clear picture of the target's attack surface and a prioritized remediation plan. The cryptographic layer is well configured; the principal risks are at the application layer — exposed directories, administrative interfaces, and missing security headers.</p>
+  <p>The engagement did not achieve access because the WAF/anti-bot control blocked automated interaction and the credential test was misconfigured (a false positive). These are precisely the kinds of real-world obstacles penetration testers must recognize and handle methodically.</p>
+
+  <h3>Key Learning Outcomes</h3>
+  <ul>
+    <li><strong>Validate tool output before trusting it.</strong> A brute-force "success" is meaningless without a matching failure condition and a real session.</li>
+    <li><strong>Precision matters.</strong> A single digit (192 vs 199) invalidated an entire scan and wasted time.</li>
+    <li><strong>WAFs change the game.</strong> When automated tooling is blocked, manual, browser-driven testing and throttling become necessary.</li>
+    <li><strong>Documentation is part of the deliverable.</strong> Captured evidence, screenshots, and honest status reporting (including what was <em>not</em> achieved) are as important as the findings themselves.</li>
+    <li><strong>Stay within scope.</strong> All work remained inside the authorized lab, with credentials redacted and no destructive actions taken.</li>
+  </ul>
+
+  <div class="callout info">
+    <strong>Final result:</strong> Reconnaissance, enumeration, and vulnerability analysis complete; gaining access blocked by WAF/anti-bot and a credential-test false positive; exploitation and post-exploitation not reached. A clear, safe path to unblock is documented in Section 9.
+  </div>
+</section>
+
+<!-- EVIDENCE INDEX -->
+<section>
+  <h2>14. Evidence Index</h2>
+  <table class="data">
+    <tr><th>Figure</th><th>Evidence</th><th>File</th></tr>
+    <tr><td>1</td><td>OSINT / scope confirmation</td><td>reconss1.png</td></tr>
+    <tr><td>2</td><td>OpenSSL TLS handshake</td><td>openssl.png</td></tr>
+    <tr><td>3</td><td>Index of /old/ exposing DB backup</td><td>evidence/shot_old_listing.png</td></tr>
+    <tr><td>4</td><td>Index of /patient/ exposure</td><td>evidence/shot_patient_listing.png</td></tr>
+    <tr><td>5</td><td>Anti-bot challenge page</td><td>evidence/shot_home.png</td></tr>
+    <tr><td>6</td><td>Original hydra false positive (redacted)</td><td>evidence/users_terminal_redacted.png</td></tr>
+    <tr><td>7</td><td>Real patient portal login page</td><td>evidence/shot_login_real.png</td></tr>
+  </table>
+  <p class="small">Supporting raw logs: recon1.txt, reconn2.txt, full.txt, 192.188.201.16.*, webapp_full_scan.*, webapp_web_ports.*, hydra_run.log, hydra_1050.log. The exposed SQL backup (evidence/mediroza_db_backup_2019.sql) is retained locally as evidence but its personal data is excluded from this report. All credential values have been redacted in accordance with submission requirements.</p>
+  <p class="small">Prepared by Raphael Osindi (MV-CYB-2026-0092) for the Malak Ventures Cybersecurity Internship — Week 4 Final Submission.</p>
+</section>
+
+</body>
+</html>

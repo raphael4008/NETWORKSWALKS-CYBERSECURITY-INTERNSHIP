@@ -1,0 +1,1027 @@
+Registrant City: Lewes
+Registrant State/Province: Delaware
+Registrant Postal Code: 19958
+Registrant Country: US
+Registrant Phone: +1.3022061391
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: 304b9a5ce311452daf367cc83554d904.protect@withheldforprivacy.com
+Registry Admin ID: 
+Admin Name: Redacted for Privacy Purposes
+Admin Organization: Privacy service provided by WITHHELD FOR PRIVACY LLC
+Admin Street: 16192 Coastal Highway 
+Admin City: Lewes
+Admin State/Province: Delaware
+Admin Postal Code: 19958
+Admin Country: US
+Admin Phone: +1.3022061391
+Admin Phone Ext: 
+Admin Fax: 
+Admin Fax Ext: 
+Admin Email: 304b9a5ce311452daf367cc83554d904.protect@withheldforprivacy.com
+Registry Tech ID: 
+Tech Name: Redacted for Privacy Purposes
+Tech Organization: Privacy service provided by WITHHELD FOR PRIVACY LLC
+Tech Street: 16192 Coastal Highway 
+Tech City: Lewes
+Tech State/Province: Delaware
+Tech Postal Code: 19958
+Tech Country: US
+Tech Phone: +1.3022061391
+Tech Phone Ext: 
+Tech Fax: 
+Tech Fax Ext: 
+Tech Email: 304b9a5ce311452daf367cc83554d904.protect@withheldforprivacy.com
+Name Server: dns1.namecheaphosting.com
+Name Server: dns2.namecheaphosting.com
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-11-23T00:54:23.92Z <<<
+For more information on Whois status codes, please visit https://icann.org/epp
+❯ nmap -sV -p medirozahospital.com
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-23 09:57 +0300
+Found no matches for the service mask 'medirozahospital.com' and your specified protocols
+QUITTING!
+❯ nmap  medirozahospital.com
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-23 10:02 +0300
+RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
+RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
+RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
+RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
+Nmap scan report for medirozahospital.com (199.188.201.16)
+Host is up (0.59s latency).
+rDNS record for 199.188.201.16: server274-1.web-hosting.com
+Not shown: 987 filtered tcp ports (no-response)
+PORT    STATE  SERVICE
+20/tcp  closed ftp-data
+21/tcp  open   ftp
+25/tcp  open   smtp
+26/tcp  open   rsftp
+53/tcp  open   domain
+80/tcp  open   http
+110/tcp open   pop3
+143/tcp open   imap
+443/tcp open   https
+465/tcp open   smtps
+587/tcp open   submission
+993/tcp open   imaps
+995/tcp open   pop3s
+
+Nmap done: 1 IP address (1 host up) scanned in 1021.41 seconds
+❯ nslookup -type=ANY medirozahospital.com
+Server:         1.1.1.1
+Address:        1.1.1.1#53
+
+Non-authoritative answer:
+medirozahospital.com
+        origin = dns1.namecheaphosting.com
+        mail addr = cpanel.tech.namecheap.com
+        serial = 1791748523
+        refresh = 86400
+        retry = 7200
+        expire = 3600000
+        minimum = 86400
+Name:   medirozahospital.com
+Address: 199.188.201.16
+
+Authoritative answers can be found from:
+
+❯ dig @nameserver medirozahospital.com
+dig: couldn't get address for 'nameserver': not found
+❯ dig -x 192.188.201.16
+
+; <<>> DiG 9.20.29-1-Debian <<>> -x 192.188.201.16
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 54843
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;16.201.188.192.in-addr.arpa.   IN      PTR
+
+;; Query time: 216 msec
+;; SERVER: 1.1.1.1#53(1.1.1.1) (UDP)
+;; WHEN: Mon Nov 23 10:42:57 EAT 2026
+;; MSG SIZE  rcvd: 45
+
+❯ dnsrecon -d medirozahospital.com -t std,brt
+2026-11-23T10:44:42.469951+0300 INFO No dictionary file has been specified.
+2026-11-23T10:44:42.471025+0300 INFO Using the dictionary file: /usr/share/dnsrecon/dnsrecon/data/namelist.txt (provided by tool)
+2026-11-23T10:44:42.471357+0300 INFO Starting enumeration for domain: medirozahospital.com
+2026-11-23T10:44:42.471926+0300 INFO brt: Performing host and subdomain brute force against medirozahospital.com...
+2026-11-23T10:44:48.988161+0300 INFO     A autodiscover.medirozahospital.com 199.188.201.16
+2026-11-23T10:45:07.695372+0300 INFO     A ftp.medirozahospital.com 199.188.201.16
+2026-11-23T10:45:22.798419+0300 INFO     A mail.medirozahospital.com 199.188.201.16
+2026-11-23T10:46:19.452419+0300 INFO     A webmail.medirozahospital.com 199.188.201.16
+2026-11-23T10:46:25.357675+0300 INFO     CNAME www.medirozahospital.com medirozahospital.com
+2026-11-23T10:46:25.358506+0300 INFO     A medirozahospital.com 199.188.201.16
+2026-11-23T10:46:28.762195+0300 INFO 6 Records Found
+2026-11-23T10:46:28.765666+0300 INFO std: Performing General Enumeration against: medirozahospital.com...
+2026-11-23T10:46:29.800004+0300 ERROR No answer for DNSSEC query for medirozahospital.com
+2026-11-23T10:46:30.615696+0300 INFO     SOA dns1.namecheaphosting.com 156.154.132.200
+2026-11-23T10:46:30.616058+0300 INFO     SOA dns1.namecheaphosting.com 2610:a1:1024::200
+2026-11-23T10:46:31.423040+0300 INFO     NS dns1.namecheaphosting.com 156.154.132.200
+2026-11-23T10:46:34.546140+0300 INFO     NS dns1.namecheaphosting.com 2610:a1:1024::200
+2026-11-23T10:46:34.547651+0300 INFO     NS dns2.namecheaphosting.com 156.154.133.200
+2026-11-23T10:46:34.561400+0300 ERROR    Recursion enabled on NS Server 156.154.133.200
+2026-11-23T10:46:34.571090+0300 INFO     NS dns2.namecheaphosting.com 2610:a1:1025::200
+2026-11-23T10:46:40.629629+0300 INFO     MX mx1-hosting.jellyfish.systems 162.255.118.28
+2026-11-23T10:46:40.630026+0300 INFO     MX mx2-hosting.jellyfish.systems 162.255.118.29
+2026-11-23T10:46:40.630241+0300 INFO     MX mx3-hosting.jellyfish.systems 162.255.118.13
+2026-11-23T10:46:43.640814+0300 INFO     A medirozahospital.com 199.188.201.16
+2026-11-23T10:46:44.473844+0300 INFO     TXT medirozahospital.com v=spf1 +a +mx +ip4:199.188.201.7 +ip4:199.188.201.38 include:spf.web-hosting.com ~all
+2026-11-23T10:46:44.474273+0300 INFO     TXT _dmarc.medirozahospital.com v=DMARC1; p=none;
+2026-11-23T10:46:47.678926+0300 INFO Enumerating SRV Records
+2026-11-23T10:46:52.780552+0300 INFO     SRV _carddav._tcp.medirozahospital.com medirozahospital.com 199.188.201.16 2079
+2026-11-23T10:46:52.785503+0300 INFO     SRV _caldavs._tcp.medirozahospital.com medirozahospital.com 199.188.201.16 2080
+2026-11-23T10:46:52.786007+0300 INFO     SRV _carddavs._tcp.medirozahospital.com medirozahospital.com 199.188.201.16 2080
+2026-11-23T10:46:53.096808+0300 INFO     SRV _autodiscover._tcp.medirozahospital.com cpanelemaildiscovery.cpanel.net 184.94.204.9 443
+2026-11-23T10:46:53.097294+0300 INFO     SRV _autodiscover._tcp.medirozahospital.com cpanelemaildiscovery.cpanel.net 184.94.203.9 443
+2026-11-23T10:46:53.097543+0300 INFO     SRV _autodiscover._tcp.medirozahospital.com cpanelemaildiscovery.cpanel.net 184.94.203.11 443
+2026-11-23T10:46:53.097778+0300 INFO     SRV _autodiscover._tcp.medirozahospital.com cpanelemaildiscovery.cpanel.net 184.94.204.15 443
+2026-11-23T10:46:53.097999+0300 INFO     SRV _autodiscover._tcp.medirozahospital.com cpanelemaildiscovery.cpanel.net 184.94.204.11 443
+2026-11-23T10:46:53.098226+0300 INFO     SRV _autodiscover._tcp.medirozahospital.com cpanelemaildiscovery.cpanel.net 184.94.203.15 443
+2026-11-23T10:46:53.098442+0300 INFO     SRV _autodiscover._tcp.medirozahospital.com cpanelemaildiscovery.cpanel.net 184.94.203.14 443
+2026-11-23T10:46:53.098661+0300 INFO     SRV _autodiscover._tcp.medirozahospital.com cpanelemaildiscovery.cpanel.net 184.94.204.14 443
+2026-11-23T10:46:55.571041+0300 INFO 11 Records Found
+2026-11-23T10:46:55.571827+0300 INFO Completed enumeration for domain: medirozahospital.com
+
+❯ dnsrecon -d medirozahospital.com dnssec
+usage: dnsrecon [-h] [-d DOMAIN] [-iL INPUT_LIST] [-n NS_SERVER] [-r RANGE] [-D DICTIONARY] [-f] [-a] [-s] [-b]
+                [-y] [-k] [-w] [--shodan] [--shodan-active] [--shodan-key SHODAN_KEY] [-z] [--threads THREADS]
+                [--lifetime LIFETIME] [--loglevel {DEBUG,INFO,WARNING,ERROR,CRITICAL}] [--tcp] [--db DB] [-x XML]
+                [-c CSV] [-j JSON] [--iw] [--disable_check_nxdomain] [--disable_check_recursion]
+                [--disable_recurs] [--disable_check_bindversion] [-V] [-v] [-t TYPE]
+dnsrecon: error: unrecognized arguments: dnssec
+❯ sublist3r -d medirozahospital.com -e google,bing,yahoo,baidu
+
+
+                 ____        _     _ _     _   _____
+                / ___| _   _| |__ | (_)___| |_|___ / _ __
+                \___ \| | | | '_ \| | / __| __| |_ \| '__|
+                 ___) | |_| | |_) | | \__ \ |_ ___) | |
+                |____/ \__,_|_.__/|_|_|___/\__|____/|_|
+
+                # Coded By Ahmed Aboul-Ela - @aboul3la
+    
+[-] Enumerating subdomains now for medirozahospital.com
+[-] Searching now in Google..
+[-] Searching now in Bing..
+[-] Searching now in Yahoo..
+[-] Searching now in Baidu..
+Traceback (most recent call last):
+  File "/usr/bin/sublist3r", line 33, in <module>
+    sys.exit(load_entry_point('Sublist3r==1.0', 'console_scripts', 'sublist3r')())
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3/dist-packages/sublist3r.py", line 1047, in interactive
+    res = main(domain, threads, savefile, ports, silent=False, verbose=verbose, enable_bruteforce=enable_bruteforce, engines=engines)
+  File "/usr/lib/python3/dist-packages/sublist3r.py", line 989, in main
+    enum.start()
+    ~~~~~~~~~~^^
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+                  ~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/multiprocessing/context.py", line 230, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/multiprocessing/context.py", line 306, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib/python3.14/multiprocessing/popen_forkserver.py", line 35, in __init__
+    super().__init__(process_obj)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/multiprocessing/popen_forkserver.py", line 47, in _launch
+    reduction.dump(process_obj, buf)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/multiprocessing/reduction.py", line 60, in dump
+    ForkingPickler(file, protocol).dump(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+TypeError: cannot pickle '_thread.lock' object
+when serializing dict item 'lock'
+when serializing sublist3r.GoogleEnum state
+when serializing sublist3r.GoogleEnum object
+❯ sudo apt install sublist3r
+[sudo] password for bantu: 
+sublist3r is already the newest version (1.1-5).
+Summary:                    
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 686
+❯ sublist3r -d medirozahospital.com -e google,bing,yahoo,baidu
+
+
+                 ____        _     _ _     _   _____
+                / ___| _   _| |__ | (_)___| |_|___ / _ __
+                \___ \| | | | '_ \| | / __| __| |_ \| '__|
+                 ___) | |_| | |_) | | \__ \ |_ ___) | |
+                |____/ \__,_|_.__/|_|_|___/\__|____/|_|
+
+                # Coded By Ahmed Aboul-Ela - @aboul3la
+    
+[-] Enumerating subdomains now for medirozahospital.com
+[-] Searching now in Google..
+[-] Searching now in Bing..
+[-] Searching now in Yahoo..
+[-] Searching now in Baidu..
+Traceback (most recent call last):
+  File "/usr/bin/sublist3r", line 33, in <module>
+    sys.exit(load_entry_point('Sublist3r==1.0', 'console_scripts', 'sublist3r')())
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3/dist-packages/sublist3r.py", line 1047, in interactive
+    res = main(domain, threads, savefile, ports, silent=False, verbose=verbose, enable_bruteforce=enable_bruteforce, engines=engines)
+  File "/usr/lib/python3/dist-packages/sublist3r.py", line 989, in main
+    enum.start()
+    ~~~~~~~~~~^^
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+                  ~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/multiprocessing/context.py", line 230, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/multiprocessing/context.py", line 306, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib/python3.14/multiprocessing/popen_forkserver.py", line 35, in __init__
+    super().__init__(process_obj)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/multiprocessing/popen_forkserver.py", line 47, in _launch
+    reduction.dump(process_obj, buf)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/multiprocessing/reduction.py", line 60, in dump
+    ForkingPickler(file, protocol).dump(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+TypeError: cannot pickle '_thread.lock' object
+when serializing dict item 'lock'
+when serializing sublist3r.GoogleEnum state
+when serializing sublist3r.GoogleEnum object
+❯ amass enum -d medirozahospital.com
+Checking for new libpostal data file...
+New libpostal data file available
+curl: (28) Connection timed out after 300359 milliseconds
+Warning: Problem : timeout. Retrying in 2 seconds. 3 retries left.
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0
+100  9.71M 100  9.71M   0      0 101.0k      0   01:38   01:38         398.1k
+address_expansions/
+address_expansions/address_dictionary.dat
+numex/
+numex/numex.dat
+transliteration/
+transliteration/transliteration.dat
+Checking for new libpostal parser data file...
+New libpostal parser data file available
+Downloading multipart: https://github.com/openvenues/libpostal/releases/download/v1.0.0/parser.tar.gz, num_chunks=12
+Downloading part 1: filename=/var/lib/libpostal/parser.tar.gz.1, offset=0, max=67108863
+Downloading part 2: filename=/var/lib/libpostal/parser.tar.gz.2, offset=67108864, max=134217727
+Downloading part 3: filename=/var/lib/libpostal/parser.tar.gz.3, offset=134217728, max=201326591
+Downloading part 6: filename=/var/lib/libpostal/parser.tar.gz.6, offset=335544320, max=402653183
+Downloading part 4: filename=/var/lib/libpostal/parser.tar.gz.4, offset=201326592, max=268435455
+Downloading part 5: filename=/var/lib/libpostal/parser.tar.gz.5, offset=268435456, max=335544319
+Downloading part 7: filename=/var/lib/libpostal/parser.tar.gz.7, offset=402653184, max=469762047
+Downloading part 8: filename=/var/lib/libpostal/parser.tar.gz.8, offset=469762048, max=536870911
+Downloading part 9: filename=/var/lib/libpostal/parser.tar.gz.9, offset=536870912, max=603979775
+Downloading part 10: filename=/var/lib/libpostal/parser.tar.gz.10, offset=603979776, max=671088639
+Downloading part 11: filename=/var/lib/libpostal/parser.tar.gz.11, offset=671088640, max=738197503
+Downloading part 12: filename=/var/lib/libpostal/parser.tar.gz.12, offset=738197504, max=805306367
+address_parser/
+address_parser/address_parser_crf.dat
+address_parser/address_parser_phrases.dat
+address_parser/address_parser_postal_codes.dat
+address_parser/address_parser_vocab.trie
+Checking for new libpostal language classifier data file...
+New libpostal language classifier data file available
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0           00:02              0
+ 72 48.00M  72 34.89M   0      0  11313      0 1:14:09   53:54   20:15  62096^C
+Usage:
+ kill [options] <pid> [...]
+
+Options:
+ <pid> [...]            send signal to every <pid> listed
+ -<signal>, -s, --signal <signal>
+                        specify the <signal> to be sent
+ -q, --queue <value>    integer value to be sent with the signal
+ -l, --list=[<signal>]  list all signal names, or convert one to a name
+ -L, --table            list all signal names in a nice table
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see kill(1).
+❯ theHarvester -d medirozahospital.com -b all -l 500
+Read proxies.yaml from /etc/theHarvester/proxies.yaml
+*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.11.1                                             *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+*******************************************************************
+
+[*] Target: medirozahospital.com 
+
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+Failed to process bevigil search for word: 'medirozahospital.com'
+Error Message: 
+[!] Missing API key for bevigil. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+
+[!] Missing API key for Bitbucket. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+Failed to process bufferoverun search for word: 'medirozahospital.com'
+Error Message: 
+[!] Missing API key for bufferoverun. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+Failed to perform BuiltWith search for word: 'medirozahospital.com'
+A Missing Key Error occurred in builtwith: 
+[!] Missing API key for BuiltWith. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+Failed to process brave search for word: 'medirozahospital.com'
+Error Message: 
+[!] Missing API key for Brave Search. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+Censys API key is missing or invalid: 
+[!] Missing API key for Censys ID and/or Secret. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing key error occurred in criminalip: 
+[!] Missing API key for criminalip. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in dehashed: 
+[!] Missing API key for Dehashed. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+
+[!] Missing API key for DNSDumpster. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in dymo: 
+[!] Missing API key for dymo. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in fullhunt: 
+[!] Missing API key for fullhunt. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+Error initializing SearchGithubCode: 
+[!] Missing API key for Github. 
+A Missing Key error occurred in github-code: 
+[!] Missing API key for Github. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+
+[!] Missing API key for HaveIBeenPwned. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in Hunter: 
+[!] Missing API key for Hunter. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in Hunter How: 
+[!] Missing API key for hunterhow. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in intelx: 
+[!] Missing API key for Intelx. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+[*] Mojeek: No API key found, using default scraping mode.
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in Netlas: 
+[!] Missing API key for netlas. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+Unexpected error occurred in Onyphe module: 
+[!] Missing API key for onyphe. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in PentestTools search: 
+[!] Missing API key for PentestTools. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in ProjectDiscovery: 
+[!] Missing API key for ProjectDiscovery. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in RocketReach: 
+[!] Missing API key for RocketReach. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+
+[!] Missing API key for SecurityScorecard. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred Security Trails: 
+[!] Missing API key for Securitytrail. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in sherlockeye: 
+[!] Missing API key for sherlockeye. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in Shodan search: 
+[!] Missing API key for Shodan. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in Tomba: 
+[!] Missing API key for Tomba Key and/or Secret. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in venacus search: 
+[!] Missing API key for Venacus. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in virustotal search: 
+[!] Missing API key for virustotal. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in whoisxml search: 
+[!] Missing API key for whoisxml. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+A Missing Key error occurred in zoomeye: 
+[!] Missing API key for zoomeye. 
+[*] Searching Chaos. 
+        Searching results.
+[*] Searching Certspotter. 
+[*] Searching Baidu. 
+[*] Searching CRTsh. 
+[*] Searching Duckduckgo. 
+Fofa API error: [-700] 账号无效
+Failed to parse Fofa response: 
+[!] Missing API key for Fofa API (Invalid credentials). 
+[*] Searching Fofa. 
+[*] Searching Hackertarget. 
+2026-11-23 12:15:48,414 - theHarvester.discovery.hudsonrocksearch - INFO - Starting Hudson Rock processing for: medirozahospital.com
+2026-11-23 12:15:48,414 - theHarvester.discovery.hudsonrocksearch - INFO - Starting Hudson Rock search for: medirozahospital.com
+2026-11-23 12:15:54,652 - theHarvester.discovery.hudsonrocksearch - INFO - Domain statistics: 0 total compromised, 0 employees, 0 users
+2026-11-23 12:15:55,654 - theHarvester.discovery.hudsonrocksearch - INFO - Hudson Rock search completed. Found 0 hosts, 0 IPs, 0 emails
+2026-11-23 12:15:55,654 - theHarvester.discovery.hudsonrocksearch - INFO - Hudson Rock processing completed successfully: 0 hosts, 0 IPs, 0 emails, 0 stealers
+[*] Searching Hudsonrock. 
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+[*] Searching Gitlab. 
+[*] Searching Leaklookup. 
+LeakIX API requires authentication: "Incorrect API Key"
+[*] Searching Leakix. 
+[*] Searching Mojeek. 
+[*] Searching Rapiddns. 
+[*] Searching Otx. 
+[*] Searching ShodanInternetDB. 
+[*] Searching Robtex. 
+[*] Searching Subdomaincenter. 
+[*] Searching Thc. 
+No response from ThreatCrowd API for: medirozahospital.com
+[*] Searching Threatcrowd. 
+
+ An error occurred while processing a "work item": TypeError: string indices must be integers, not 'str'
+
+[*] Searching Subdomainfinderc99. 
+[*] Windvane API key not found. Using limited unauthenticated access.
+[*] API unavailable, using fallback subdomain pattern search...
+[*] Found 3 subdomains using DNS fallback
+[*] Searching Windvane. 
+[*] Searching Commoncrawl. 
+[*] Searching Yahoo. 
+[*] Searching Waybackarchive. 
+
+[*] No LinkedIn users found.
+
+
+
+[*] LinkedIn Links found: 0
+---------------------
+
+[*] IPs found: 3
+-------------------
+199.188.201.16
+
+[*] No emails found.
+
+[*] No people found.
+
+[*] Hosts found: 4
+---------------------
+ftp.medirozahospital.com
+heartpatient.medirozahospital.com
+heartpatient.medirozahospital.com:199.188.201.16
+mail.medirozahospital.com
+
+[*] Performing SecurityScorecard scan...
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+An exception has occurred in SecurityScorecard scanning: 
+[!] Missing API key for SecurityScorecard. 
+
+[*] Performing BuiltWith scan...
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+
+[!] Missing API key for BuiltWith. 
+❯ whatweb -v -a 3 https://medirozahospital.com
+WhatWeb report for https://medirozahospital.com
+Status    : 403 Forbidden
+Title     : ,403 Forbidden
+IP        : 199.188.201.16
+Country   : UNITED STATES, US
+
+Summary   : HTML5, HTTPServer[LiteSpeed], LiteSpeed, PoweredBy[LiteSpeed], UncommonHeaders[x-turbo-charged-by]
+
+Detected Plugins:
+[ HTML5 ]
+        HTML version 5, detected by the doctype declaration 
+
+
+[ HTTPServer ]
+        HTTP server header string. This plugin also attempts to 
+        identify the operating system from the server header. 
+
+        String       : LiteSpeed (from server string)
+
+[ LiteSpeed ]
+        LiteSpeed web server, which is able to read Apache 
+        configuration directly and used together with web hosting 
+        control panels by replacing Apache 
+
+
+[ PoweredBy ]
+        This plugin identifies instances of 'Powered by x' text and 
+        attempts to extract the value for x. 
+
+        String       : LiteSpeed
+
+[ UncommonHeaders ]
+        Uncommon HTTP server headers. The blacklist includes all 
+        the standard headers and many non standard but common ones. 
+        Interesting but fairly common headers should have their own 
+        plugins, eg. x-powered-by, server and x-aspnet-version. 
+        Info about headers can be found at www.http-stats.com 
+
+        String       : x-turbo-charged-by (from headers)
+
+HTTP Headers:
+        HTTP/1.1 403 Forbidden
+        keep-alive: timeout=5, max=100
+        cache-control: private, no-cache, no-store, must-revalidate, max-age=0
+        pragma: no-cache
+        content-type: text/html
+        content-length: 1242
+        date: Mon, 23 Nov 2026 09:18:54 GMT
+        server: LiteSpeed
+        x-turbo-charged-by: LiteSpeed
+        connection: close
+
+❯ curl -I https://medirozahospital.com
+HTTP/2 200 
+content-type: text/html
+last-modified: Fri, 04 Sep 2026 02:03:12 GMT
+accept-ranges: bytes
+content-length: 5445
+date: Mon, 23 Nov 2026 09:19:45 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+❯ 
+❯ parsed.names:medirozahospital.com
+zsh: command not found: parsed.names:medirozahospital.com
+❯ sudo apt install waybackurls
+[sudo] password for bantu: 
+Error: Unable to locate package waybackurls
+❯ gau medirozahospital.com
+fatal: pathspec 'medirozahospital.com' did not match any files
+❯ nmap -vv -n -sV -sC -Pn -p- -oA 192.188.201.16
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-23 12:28 +0300
+NSE: Loaded 158 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:28
+Completed NSE at 12:28, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:28
+Completed NSE at 12:28, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:28
+Completed NSE at 12:28, 0.00s elapsed
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:28
+Completed NSE at 12:28, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:28
+Completed NSE at 12:28, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:28
+Completed NSE at 12:28, 0.00s elapsed
+Read data files from: /usr/share/nmap
+WARNING: No targets were specified, so 0 hosts scanned.
+Nmap done: 0 IP addresses (0 hosts up) scanned in 0.48 seconds
+           Raw packets sent: 0 (0B) | Rcvd: 0 (0B)
+❯ nmap -vv -n -sV -sC -Pn -p- -oA webapp_full_scan 192.188.201.16
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-23 12:29 +0300
+NSE: Loaded 158 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:30
+Completed NSE at 12:30, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:30
+Completed NSE at 12:30, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:30
+Completed NSE at 12:30, 0.00s elapsed
+Initiating SYN Stealth Scan at 12:30
+Scanning 192.188.201.16 [65535 ports]
+Discovered open port 53/tcp on 192.188.201.16
+SYN Stealth Scan Timing: About 6.29% done; ETC: 12:38 (0:07:42 remaining)
+SYN Stealth Scan Timing: About 17.56% done; ETC: 12:36 (0:05:56 remaining)
+SYN Stealth Scan Timing: About 21.07% done; ETC: 12:38 (0:06:31 remaining)
+SYN Stealth Scan Timing: About 21.85% done; ETC: 12:40 (0:08:15 remaining)
+SYN Stealth Scan Timing: About 23.18% done; ETC: 12:42 (0:09:50 remaining)
+SYN Stealth Scan Timing: About 28.00% done; ETC: 12:41 (0:08:20 remaining)
+SYN Stealth Scan Timing: About 30.13% done; ETC: 12:42 (0:09:01 remaining)
+SYN Stealth Scan Timing: About 34.72% done; ETC: 12:41 (0:07:34 remaining)
+SYN Stealth Scan Timing: About 42.24% done; ETC: 12:39 (0:05:02 remaining)
+SYN Stealth Scan Timing: About 44.02% done; ETC: 12:41 (0:05:40 remaining)
+SYN Stealth Scan Timing: About 45.01% done; ETC: 12:42 (0:06:45 remaining)
+SYN Stealth Scan Timing: About 46.35% done; ETC: 12:43 (0:07:28 remaining)
+SYN Stealth Scan Timing: About 47.00% done; ETC: 12:45 (0:08:58 remaining)
+SYN Stealth Scan Timing: About 47.41% done; ETC: 12:48 (0:10:59 remaining)
+SYN Stealth Scan Timing: About 48.80% done; ETC: 12:47 (0:09:43 remaining)
+SYN Stealth Scan Timing: About 49.15% done; ETC: 12:50 (0:11:58 remaining)
+SYN Stealth Scan Timing: About 50.56% done; ETC: 12:49 (0:09:55 remaining)
+SYN Stealth Scan Timing: About 52.53% done; ETC: 12:48 (0:08:55 remaining)
+SYN Stealth Scan Timing: About 54.45% done; ETC: 12:48 (0:07:41 remaining)
+SYN Stealth Scan Timing: About 55.14% done; ETC: 12:49 (0:08:45 remaining)
+SYN Stealth Scan Timing: About 57.25% done; ETC: 12:48 (0:06:26 remaining)
+SYN Stealth Scan Timing: About 61.07% done; ETC: 12:46 (0:04:19 remaining)
+SYN Stealth Scan Timing: About 65.07% done; ETC: 12:46 (0:03:09 remaining)
+Completed SYN Stealth Scan at 12:43, 808.12s elapsed (65535 total ports)
+Initiating Service scan at 12:43
+Scanning 1 service on 192.188.201.16
+Completed Service scan at 12:43, 6.05s elapsed (1 service on 1 host)
+NSE: Script scanning 192.188.201.16.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:43
+Completed NSE at 12:43, 8.29s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:43
+Completed NSE at 12:43, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:43
+Completed NSE at 12:43, 0.00s elapsed
+Nmap scan report for 192.188.201.16
+Host is up, received user-set (0.026s latency).
+Scanned at 2026-11-23 12:30:00 EAT for 822s
+Not shown: 65534 filtered tcp ports (no-response)
+PORT   STATE SERVICE REASON         VERSION
+53/tcp open  domain  syn-ack ttl 63 Mikrotik dnsd
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:43
+Completed NSE at 12:43, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:43
+Completed NSE at 12:43, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:43
+Completed NSE at 12:43, 0.00s elapsed
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 823.09 seconds
+           Raw packets sent: 131534 (5.787MB) | Rcvd: 516 (22.704KB)
+❯ nmap -vv -n -sV -sC -Pn -p 80,443,8000,8008,8080,8081,8443,8888,9090 -oA webapp_web_ports 192.188.201.16
+
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Starting Nmap 7.991 ( https://nmap.org ) at 2026-11-23 12:44 +0300
+NSE: Loaded 158 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+Initiating SYN Stealth Scan at 12:44
+Scanning 192.188.201.16 [9 ports]
+Completed SYN Stealth Scan at 12:44, 3.03s elapsed (9 total ports)
+Initiating Service scan at 12:44
+NSE: Script scanning 192.188.201.16.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 5.01s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+Nmap scan report for 192.188.201.16
+Host is up, received user-set.
+Scanned at 2026-11-23 12:44:29 EAT for 8s
+
+PORT     STATE    SERVICE         REASON      VERSION
+80/tcp   filtered http            no-response
+443/tcp  filtered https           no-response
+8000/tcp filtered http-alt        no-response
+8008/tcp filtered http            no-response
+8080/tcp filtered http-proxy      no-response
+8081/tcp filtered blackice-icecap no-response
+8443/tcp filtered https-alt       no-response
+8888/tcp filtered sun-answerbook  no-response
+9090/tcp filtered zeus-admin      no-response
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:44
+Completed NSE at 12:44, 0.00s elapsed
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 8.79 seconds
+           Raw packets sent: 18 (792B) | Rcvd: 0 (0B)
+❯ openssl s_client -connect medirozahospital.com:443 -showcerts
+Connecting to 199.188.201.16
+CONNECTED(00000003)
+depth=2 C=US, O=SSL Corporation, CN=SSL.com TLS RSA Root CA 2022
+verify return:1
+depth=1 C=US, O=SSL Corporation, CN=SSL.com TLS Issuing RSA CA R1
+verify return:1
+depth=0 CN=medirozahospital.com
+verify return:1
+---
+Certificate chain
+ 0 s:CN=medirozahospital.com
+   i:C=US, O=SSL Corporation, CN=SSL.com TLS Issuing RSA CA R1
+   a:PKEY: RSA, 2048 (bit); sigalg: sha256WithRSAEncryption
+   v:NotBefore: Aug 14 20:59:46 2026 GMT; NotAfter: Feb 28 21:05:45 2027 GMT
+-----BEGIN CERTIFICATE-----
+MIIGiDCCBPCgAwIBAgIQOCVfeIartuSKztg0Umk2ADANBgkqhkiG9w0BAQsFADBP
+MQswCQYDVQQGEwJVUzEYMBYGA1UECgwPU1NMIENvcnBvcmF0aW9uMSYwJAYDVQQD
+DB1TU0wuY29tIFRMUyBJc3N1aW5nIFJTQSBDQSBSMTAeFw0yNjA4MTQyMDU5NDZa
+Fw0yNzAyMjgyMTA1NDVaMB8xHTAbBgNVBAMMFG1lZGlyb3phaG9zcGl0YWwuY29t
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxrgV48QFolKhOH9CY8hS
+bqDRedLKcYOdiaNew7aPgxMy4Hwzhg6anPwL9JOX3o/xk6rimazAyRkzUrzxeFvX
+zcbBVKm4pwy2F3UgpkxwSsyXMsL5H4lXm2tGJu2ARp85Ew/04jkh0RtK7LLKt3m6
+RpsqrXAyqrqgG+6d1rnTJlKXOOJr8xodw8QPhedvvyNzV4nfd6RclbPbgCmGMuIl
+PjJgssM0iyXWznPdOWIGMPF49hDlnG9mGboM2+q5/g+vWYDDPVPneNBE/FRA3suh
+Th485WveQatuPl0bC0lyFEBSsJrX5pASXnUKw9gOmbEW6o06/J1FKiwsBp9R+A9d
+WwIDAQABo4IDDjCCAwowDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBR5upR3oA0Z
+3TTmOaT8TKXSWm31jDBqBggrBgEFBQcBAQReMFwwOAYIKwYBBQUHMAKGLGh0dHA6
+Ly9jZXJ0LnNzbC5jb20vU1NMLmNvbS1UTFMtSS1SU0EtUjEuY2VyMCAGCCsGAQUF
+BzABhhRodHRwOi8vb2NzcHMuc3NsLmNvbTA5BgNVHREEMjAwghRtZWRpcm96YWhv
+c3BpdGFsLmNvbYIYd3d3Lm1lZGlyb3phaG9zcGl0YWwuY29tMCMGA1UdIAQcMBow
+CAYGZ4EMAQIBMA4GDCsGAQQBgqkwAQMBATAdBgNVHSUEFjAUBggrBgEFBQcDAgYI
+KwYBBQUHAwEwPQYDVR0fBDYwNDAyoDCgLoYsaHR0cDovL2NybHMuc3NsLmNvbS9T
+U0wuY29tLVRMUy1JLVJTQS1SMS5jcmwwHQYDVR0OBBYEFA+iNAG7lvQhbLRyxgwy
+POlYofQvMA4GA1UdDwEB/wQEAwIFoDCCAX4GCisGAQQB1nkCBAIEggFuBIIBagFo
+AHcATGPcmOWcHauI9h6KPd6uj6tEozd7X5uUw/uhnPzBviYAAAGgAhwNpgAABAMA
+SDBGAiEA9qrp6jOzYEGdvjwZI9nrthgmKpWuirp0KRb8TFhMptECIQDkBCJmZVA4
+6eEhCLwk+N/xekdSnBhoX/5HPEXZTeoY5AB1AETCvQzpFA5kpclKAZMKWqG7NZcO
+AO4RFoloKhxE17VmAAABoAIcDaQAAAQDAEYwRAIgRLqavGZVgWbqQrnvIXaYSDhN
+UXOoO6Mjh6Jt7aC3y/ICIEtkY8vesZsYbP1xvBoo0pZWudUvuvF1LX/CJ9leRuLh
+AHYAHJ9oLOn68EVpUPgbloqH3dsyENhM5siy44JSSsTPWZ8AAAGgAhwNmgAABAMA
+RzBFAiEAxpYasaQeX8eNuJeqCEw3d6QOXNBTVK9GbId+aiFXsYECIF6qa5cHW9BS
+1Y2FqQL4RA+AeMmOwQjHdae4/GAkMGuPMA0GCSqGSIb3DQEBCwUAA4IBgQCat9e4
+nuzmmXB216c1FvYj4pZ4HvwU0EME04Ogt+x5qYd1wz5jjR3QPDfYLXLtJrRgiybH
+KqTP9lzFMns5vJGanUYXPL41/cVg7QQ8ZieYa5tRlP+Ak8geWbl/V7drpHh5OBDa
+TbNtGWRpb5C0XBWWrT82s3rl2koGn4FDYJnxo6Vn6mqjiZSUXXvfdi+qWPSIyl6f
+OoTG2F26PiFaCxKAqIGYgYbWzq1bSJNmdiSV7ZxuOT+S8JPPDDSzILYrJm+R27zD
+LUTbYt69zlnoNT5onXEmDab4tLfxv/wWsYfhmBKp7MXgB9Uy53LI3FIuc+KgybOP
+jjo29xqOvEgiC0c9pRpnjcRsSS2o0pOIXDB4StaLMtpdMjynS/kpdx/R9zPeK/1X
+zKmJJPLMOmT00iw7i4e/S0QtnNReL+NG4lVjK1+7cMEm2RCrhCkmdXdRGMQNfxpM
+VXqJEOyIMzz7qtx6ytuxNCyHBTCW2nwqxPyZItTetyOZBwWrQeemLnmEVhY=
+-----END CERTIFICATE-----
+ 1 s:C=US, O=SSL Corporation, CN=SSL.com TLS Issuing RSA CA R1
+   i:C=US, O=SSL Corporation, CN=SSL.com TLS RSA Root CA 2022
+   a:PKEY: RSA, 3072 (bit); sigalg: sha256WithRSAEncryption
+   v:NotBefore: Oct 21 17:02:03 2022 GMT; NotAfter: Oct 18 17:02:02 2032 GMT
+-----BEGIN CERTIFICATE-----
+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
+iTZinEPk
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=CN=medirozahospital.com
+issuer=C=US, O=SSL Corporation, CN=SSL.com TLS Issuing RSA CA R1
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: rsa_pss_rsae_sha256
+Peer Temp Key: X25519, 253 bits
+---
+SSL handshake has read 3783 bytes and written 1767 bytes
+Verification: OK
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Protocol: TLSv1.3
+Server public key is 2048 bit
+This TLS version forbids renegotiation.
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 0 (ok)
+---
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: D4F1FAD935594C713BA748426AD330C7FED0BB34CF994EC1A9614C54EFCD1C4B
+    Session-ID-ctx: 
+    Resumption PSK: CC684AC5E4F8CA5221D5EF45E867298654D816E0B0D52F746026A01251B2E235486D5C9E4135CA1ABD53FE8CB7191AF2
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - 50 0f 02 dd 56 08 86 6e-ae ca 68 60 96 15 d1 3f   P...V..n..h`...?
+    0010 - 7f 34 f1 bc 69 0b 29 09-07 ea 3c 72 ae e3 a0 0b   .4..i.)...<r....
+
+    Start Time: 1795427196
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: CAB66EE41B51DE0E48914C04EC6F404C0CF3EA16DF61CEA69CB199ED5710E48A
+    Session-ID-ctx: 
+    Resumption PSK: 635C9ABF1F3CDDEDEC46AC2882096EE4D6BBE46EBACB73E2BCF5327B8A94751536CE9CF0254AB5E842DB4CBBAB88F3C4
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - de 48 88 9f d7 02 09 18-f8 2c 19 11 05 9b ff 16   .H.......,......
+    0010 - d6 e4 ce 00 a1 4d 11 17-c1 aa 5d ed 74 f2 d7 84   .....M....].t...
+
+    Start Time: 1795427196
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+HTTP/1.1 408 Request Time-out
+Content-length: 110
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/html
+
+<html><body><h1>408 Request Time-out</h1>
+Your browser didn't send a complete request in time.
+</body></html>
+closed
+❯ sslscan medirozahospital.com
+
+Version: 2.1.5
+OpenSSL 3.6.5 29 Sep 2026
+
+Connected to 199.188.201.16
+
+Testing SSL server medirozahospital.com on port 443 using SNI name medirozahospital.com
+
+  SSL/TLS Protocols:
+SSLv2     disabled
+SSLv3     disabled
+TLSv1.0   disabled
+TLSv1.1   disabled
+TLSv1.2   enabled
+TLSv1.3   enabled
+
+  TLS Fallback SCSV:
+Server supports TLS Fallback SCSV
+
+  TLS renegotiation:
+Session renegotiation not supported
+
+  TLS Compression:
+Compression disabled
+
+  Heartbleed:
+TLSv1.3 not vulnerable to heartbleed
+TLSv1.2 not vulnerable to heartbleed
+
+  Supported Server Cipher(s):
+Preferred TLSv1.3  256 bits  TLS_AES_256_GCM_SHA384        Curve 25519 DHE 253
+Accepted  TLSv1.3  256 bits  TLS_CHACHA20_POLY1305_SHA256  Curve 25519 DHE 253
+Accepted  TLSv1.3  128 bits  TLS_AES_128_GCM_SHA256        Curve 25519 DHE 253
+Preferred TLSv1.2  256 bits  ECDHE-RSA-CHACHA20-POLY1305   Curve 25519 DHE 253
+Accepted  TLSv1.2  128 bits  ECDHE-RSA-AES128-GCM-SHA256   Curve 25519 DHE 253
+Accepted  TLSv1.2  256 bits  ECDHE-RSA-AES256-GCM-SHA384   Curve 25519 DHE 253
+Accepted  TLSv1.2  128 bits  DHE-RSA-AES128-GCM-SHA256     DHE 2048 bits
+Accepted  TLSv1.2  256 bits  DHE-RSA-AES256-GCM-SHA384     DHE 2048 bits
+Accepted  TLSv1.2  128 bits  ECDHE-RSA-AES128-SHA256       Curve 25519 DHE 253
+Accepted  TLSv1.2  256 bits  ECDHE-RSA-AES256-SHA384       Curve 25519 DHE 253
+Accepted  TLSv1.2  128 bits  ECDHE-RSA-AES128-SHA          Curve 25519 DHE 253
+Accepted  TLSv1.2  256 bits  ECDHE-RSA-AES256-SHA          Curve 25519 DHE 253
+Accepted  TLSv1.2  128 bits  DHE-RSA-AES128-SHA256         DHE 2048 bits
+Accepted  TLSv1.2  128 bits  DHE-RSA-AES128-SHA            DHE 2048 bits
+Accepted  TLSv1.2  256 bits  DHE-RSA-AES256-SHA256         DHE 2048 bits
+Accepted  TLSv1.2  256 bits  DHE-RSA-AES256-SHA            DHE 2048 bits
+
+  Server Key Exchange Group(s):
+TLSv1.3  128 bits  secp256r1 (NIST P-256)
+TLSv1.3  192 bits  secp384r1 (NIST P-384)
+TLSv1.3  260 bits  secp521r1 (NIST P-521)
+TLSv1.3  128 bits  x25519
+TLSv1.3  224 bits  x448
+TLSv1.2  128 bits  secp256r1 (NIST P-256)
+TLSv1.2  192 bits  secp384r1 (NIST P-384)
+TLSv1.2  260 bits  secp521r1 (NIST P-521)
+TLSv1.2  128 bits  x25519
+TLSv1.2  224 bits  x448
+
+  SSL Certificate:
+Signature Algorithm: sha256WithRSAEncryption
+RSA Key Strength:    2048
+
+Subject:  medirozahospital.com
+Altnames: DNS:medirozahospital.com, DNS:www.medirozahospital.com
+Issuer:   SSL.com TLS Issuing RSA CA R1
+
+Not valid before: Aug 14 20:59:46 2026 GMT
+Not valid after:  Feb 28 21:05:45 2027 GMT
+❯ testssl.sh medirozahospital.com
+
+zsh: command not found: testssl.sh
+❯ nikto -h https://medirozahospital.com
+
+- Nikto v2.6.1
+---------------------------------------------------------------------------
++ Target IP:          199.188.201.16
++ Target Hostname:    medirozahospital.com
++ Target Port:        443
+---------------------------------------------------------------------------
++ SSL Info:           Subject:  /CN=medirozahospital.com
+                      CN:       medirozahospital.com
+                      SAN:      medirozahospital.com, www.medirozahospital.com
+                      Ciphers:  TLS_AES_256_GCM_SHA384
+                      Issuer:   /C=US/O=SSL Corporation/CN=SSL.com TLS Issuing RSA CA R1
++ Platform:           Unknown
++ Start Time:         2026-11-23 12:50:42 (GMT3)
+---------------------------------------------------------------------------
++ Server: LiteSpeed
++ [999100] /: Uncommon header(s) 'x-turbo-charged-by' found, with contents: LiteSpeed.
++ [750500] /old/: Directory indexing found. See: CWE-548
++ [999997] /robots.txt: Entry '/old/' is returned a non-forbidden or redirect HTTP code (200). See: https://portswigger.net/kb/issues/00600600_robots-txt-file
++ [750500] /patient/: Directory indexing found. See: CWE-548
++ [999997] /robots.txt: Entry '/patient/' is returned a non-forbidden or redirect HTTP code (200). See: https://portswigger.net/kb/issues/00600600_robots-txt-file
++ [750500] /staff/: Directory indexing found. See: CWE-548
++ [999997] /robots.txt: Entry '/staff/' is returned a non-forbidden or redirect HTTP code (200). See: https://portswigger.net/kb/issues/00600600_robots-txt-file
++ [999996] /robots.txt: contains 3 entries which should be manually viewed. See: https://developer.mozilla.org/en-US/docs/Glossary/Robots.txt
++ No CGI Directories found (use '-C all' to force check all possible dirs). CGI tests skipped.
++ [999990] OPTIONS: Allowed HTTP Methods: OPTIONS, HEAD, GET, POST .
++ [013587] /: Suggested security header missing: referrer-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
++ [013587] /: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy
++ [013587] /: Suggested security header missing: content-security-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
++ [013587] /: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ [013587] /: Suggested security header missing: x-content-type-options. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
++ [000332] /webmail/blank.html: IlohaMail 0.8.10 contains an XSS vulnerability. Previous versions contain other non-descript vulnerabilities.
++ [000360] /securecontrolpanel/: Web Server Control Panel.
++ [000362] /webmail/: Web based mail package installed.
++ [001212] /mailman/listinfo: Mailman was found on the server. See: CWE-552
++ [001218] /sitemap.xml: The sitemap.xml file provides a listing of the site content.
++ [001449] /cpanel/: Web-based control panel. See: https://cpanel.net/
++ [001770] /old/: This might be interesting.
++ [001862] /staff/: This might be interesting.
++ [002634] /webmail/lib/emailreader_execute_on_each_page.inc.php: This might be interesting: has been seen in web logs from an unknown scanner.
+

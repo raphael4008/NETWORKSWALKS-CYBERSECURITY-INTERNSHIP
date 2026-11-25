@@ -1,0 +1,4 @@
+# Nmap 7.991 scan initiated Mon Nov 23 12:28:48 2026 as: /usr/lib/nmap/nmap --privileged -vv -n -sV -sC -Pn -p- -oA 192.188.201.16
+Read data files from: /usr/share/nmap
+WARNING: No targets were specified, so 0 hosts scanned.
+# Nmap done at Mon Nov 23 12:28:48 2026 -- 0 IP addresses (0 hosts up) scanned in 0.48 seconds
